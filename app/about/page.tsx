@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Pop Up Jazz Club is a welcoming social jazz night — local singers, musicians, friends and audiences coming together.",
+    "Pop Up Jazz Club — a Herne Hill jazz night where local singers, musicians, friends and music lovers come together.",
 };
 
 export default function AboutPage() {
@@ -13,14 +13,15 @@ export default function AboutPage() {
     <div>
       <section className="border-b border-border/40 bg-surface py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold">About</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-gold">
+            About · Herne Hill
+          </p>
           <h1 className="mt-4 font-serif text-4xl font-light text-cream sm:text-5xl">
-            Our story
+            Pop Up Jazz Club
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-muted">
-            Pop Up Jazz Club brings local singers, musicians, friends and
-            audiences together for relaxed, welcoming jazz nights — stylish,
-            but never pretentious.
+            A local jazz night where singers, musicians and audiences come
+            together — friendly, relaxed, and open to all.
           </p>
         </div>
       </section>
@@ -40,28 +41,25 @@ export default function AboutPage() {
 
             <div className="space-y-6 text-sm leading-relaxed text-cream-muted sm:text-base">
               <h2 className="font-serif text-3xl font-light text-cream">
-                Built by and for our community
+                How it started
               </h2>
               <p>
-                We started Pop Up Jazz Club because we wanted a place where
-                local musicians could perform, friends could come along to
-                support them, and everyone else could discover live jazz in a
-                relaxed, informal setting. No velvet ropes — just a good night
-                out.
+                Pop Up Jazz Club began in Herne Hill as a way for local singers,
+                musicians, friends and music lovers to come together for a great
+                night out. It grew out of the area&apos;s choirs and musical
+                communities — people who wanted to perform, and people who
+                wanted to come along and listen.
               </p>
               <p>
-                The performers are people from the area — singers, pianists,
-                bass players, saxophonists and more, often playing together for
-                the first time. The audience is a mix of friends, family,
-                neighbours and anyone who loves music. That&apos;s what makes
-                each night feel personal.
+                Many of the singers come from local choirs. Audience members
+                often arrive to support friends on stage, meet new people, and
+                enjoy live music without any fuss. The music matters, but the
+                community matters just as much.
               </p>
               <p>
-                We transform each venue with red tablecloths, candlelit tables,
-                warm lighting and simple decoration to create a jazz club
-                atmosphere — but the focus is always on people, participation
-                and connection. Come to hear live music, stay to meet someone
-                new.
+                It&apos;s not a professional concert venue or an exclusive club.
+                It&apos;s a social evening — live jazz, familiar faces, and the
+                chance to make new friends.
               </p>
             </div>
           </div>
@@ -72,21 +70,21 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-serif text-3xl font-light text-cream">
-              What to expect
+              A typical evening
             </h2>
             <div className="mt-10 grid gap-8 sm:grid-cols-3">
               {[
                 {
                   title: "Arrive & settle in",
-                  text: "Doors open early. Find a table with friends, pour a drink, and ease into the evening.",
+                  text: "Find a table, open a bottle, say hello to someone nearby.",
                 },
                 {
-                  title: "Live local music",
-                  text: "Two sets from singers and musicians in the community, with a short break to chat and refuel.",
+                  title: "Two sets of live jazz",
+                  text: "Local singers and musicians — standards, favourites, and the occasional surprise.",
                 },
                 {
-                  title: "Stay & socialise",
-                  text: "Stick around afterwards — plenty of people do, and it's often the best part of the night.",
+                  title: "Stay & chat",
+                  text: "Plenty of time between sets and afterwards to catch up with friends.",
                 },
               ].map(({ title, text }) => (
                 <div key={title}>

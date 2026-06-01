@@ -141,11 +141,11 @@ export default function GalleryStory() {
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-gold">Gallery</p>
           <h1 className="mt-5 max-w-2xl font-serif text-4xl font-light leading-tight text-cream sm:text-5xl lg:text-6xl">
-            You&apos;re invited.
+            Music, friends &amp; good evenings
           </h1>
           <p className="mt-6 max-w-md text-lg text-cream-muted">
-            A social jazz night — live music, good people, bring your own
-            bottle.
+            Pop Up Jazz Club in Herne Hill — live music, local voices, and a
+            friendly crowd.
           </p>
 
           <nav
@@ -184,10 +184,10 @@ export default function GalleryStory() {
       <section className="border-t border-border/40 bg-surface py-24 sm:py-32">
         <div className="mx-auto max-w-6xl px-6 text-center lg:px-8">
           <p className="font-serif text-2xl font-light text-cream sm:text-3xl">
-            Come along to the next one.
+            Fancy joining us?
           </p>
           <p className="mx-auto mt-4 max-w-sm text-sm text-cream-muted">
-            Bring friends. Find a table. Enjoy the night.
+            See when the next Herne Hill night is on.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/events">See upcoming events</Button>

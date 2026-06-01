@@ -6,14 +6,14 @@ export default function FeaturePanels() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="mb-14 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-gold">
-            Why come along
+            Pop Up Jazz Club
           </p>
           <h2 className="mt-4 font-serif text-3xl font-light text-cream sm:text-4xl">
-            More than a gig — a night out together
+            A Herne Hill jazz night built around people and music
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2">
           {features.map(({ title, description, icon }) => (
             <article
               key={title}

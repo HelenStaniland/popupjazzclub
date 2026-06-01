@@ -15,14 +15,14 @@ export default function Hero() {
       <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="max-w-3xl">
           <p className="mb-6 text-xs uppercase tracking-[0.3em] text-gold">
-            Pop Up Jazz Club
+            Pop Up Jazz Club · Herne Hill
           </p>
           <h1 className="font-serif text-4xl font-light leading-tight tracking-wide text-cream sm:text-5xl lg:text-6xl">
-            Live jazz, local talent, great nights out.
+            Live jazz, local voices and great company.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream-muted sm:text-xl">
-            A welcoming social jazz night — come for the music, stay for the
-            company. Bring your own bottle.
+            Where singers, musicians and audiences come together for an
+            enjoyable night out. Bring your own bottle.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button href="/events">Book Tickets</Button>

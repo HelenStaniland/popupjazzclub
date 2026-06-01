@@ -9,8 +9,8 @@ export default function Footer() {
           <div>
             <p className="font-serif text-xl text-cream">Pop Up Jazz Club</p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream-muted">
-              A welcoming social jazz night — local talent, live music, and
-              good company. Bring your own bottle.
+              Live jazz in Herne Hill — local voices, familiar faces, and
+              enjoyable nights out. Bring your own bottle.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Pop Up Jazz Club. All rights reserved.
           </p>
           <p className="text-xs italic text-cream-muted/70">
-            Live music. Good company. Bring your own bottle.
+            Herne Hill · Live music · Good company
           </p>
         </div>
       </div>

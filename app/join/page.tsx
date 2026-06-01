@@ -4,7 +4,7 @@ import JoinForm from "@/components/JoinForm";
 export const metadata: Metadata = {
   title: "Join the Club",
   description:
-    "Join the Pop Up Jazz Club mailing list — hear about upcoming social jazz nights, local performers, and ticket news.",
+    "Join the Pop Up Jazz Club mailing list — hear about upcoming jazz nights in Herne Hill.",
 };
 
 export default function JoinPage() {
@@ -23,9 +23,8 @@ export default function JoinPage() {
             Stay in the loop
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-muted">
-            Sign up to hear about upcoming nights, who&apos;s performing, and
-            when tickets go on sale. No spam — just the occasional note about
-            a great night out.
+            Hear about upcoming nights in Herne Hill — who&apos;s performing and
+            when tickets are available.
           </p>
         </div>
       </section>
@@ -36,26 +35,26 @@ export default function JoinPage() {
 
           <div className="mt-16 text-center">
             <h2 className="font-serif text-2xl font-light text-cream">
-              Why join?
+              What you&apos;ll hear about
             </h2>
             <ul className="mt-8 space-y-4 text-sm text-cream-muted">
               <li className="flex items-center justify-center gap-3">
                 <span className="text-gold" aria-hidden>
                   ✦
                 </span>
-                Hear when new events are announced
+                Upcoming jazz nights in Herne Hill
               </li>
               <li className="flex items-center justify-center gap-3">
                 <span className="text-gold" aria-hidden>
                   ✦
                 </span>
-                Find out who&apos;s performing each night
+                Who&apos;s performing
               </li>
               <li className="flex items-center justify-center gap-3">
                 <span className="text-gold" aria-hidden>
                   ✦
                 </span>
-                Be part of a growing community of music lovers
+                When tickets go on sale
               </li>
             </ul>
           </div>

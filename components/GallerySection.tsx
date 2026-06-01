@@ -22,12 +22,8 @@ export default function GallerySection({
               Gallery
             </p>
             <h2 className="mt-4 font-serif text-3xl font-light text-cream sm:text-4xl">
-              Nights to remember
+              Music, friends &amp; good evenings
             </h2>
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-cream-muted">
-              Red-clothed tables, candlelight, a live band, and a room full of
-              friends — real nights from Pop Up Jazz Club.
-            </p>
           </div>
           {showViewAll && (
             <Link

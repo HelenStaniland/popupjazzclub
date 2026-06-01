@@ -11,7 +11,7 @@ export default function AboutSection() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border bg-surface-elevated">
               <Image
                 src="/gallery/CurtainCall.jpg"
-                alt="Pop Up Jazz Club singers and musicians together on stage"
+                alt="Pop Up Jazz Club singers and musicians together on stage in Herne Hill"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -25,32 +25,32 @@ export default function AboutSection() {
           </div>
 
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-gold">About</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-gold">
+              Herne Hill
+            </p>
             <h2 className="mt-4 font-serif text-3xl font-light text-cream sm:text-4xl">
-              Friends, musicians &amp; neighbours
+              Local singers, musicians &amp; friends
             </h2>
             <div className="mt-6 space-y-4 text-sm leading-relaxed text-cream-muted sm:text-base">
               <p>
-                Pop Up Jazz Club is a welcoming social jazz night where local
-                singers, musicians, friends and audiences come together. It
-                started as a way to share live music with the people we know —
-                and grew into something the whole community looks forward to.
+                Pop Up Jazz Club started in Herne Hill as a way for local
+                singers, musicians, friends and music lovers to come together
+                for a great night out.
               </p>
               <p>
-                You might come to support a friend on stage, catch up with
-                neighbours over a glass of wine, or simply enjoy a relaxed
-                evening with other music lovers. The hall gets dressed with red
-                tablecloths, candles and lighting to create a jazz club feel —
-                but what makes the night special is the people in the room.
+                Many of the singers come from local choirs and musical
+                communities. People come along to support friends on stage,
+                discover new performers, and enjoy live music in a relaxed
+                atmosphere.
               </p>
               <p>
-                No dress code, no pretension — just good music, good company,
-                and a shared experience you&apos;ll want to come back to.
+                The music matters — and so does the community. Everyone is
+                welcome, whether you know the performers or not.
               </p>
             </div>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button href="/about" variant="secondary">
-                Our story
+                About us
               </Button>
               <Link
                 href="/join"

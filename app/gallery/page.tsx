@@ -4,7 +4,7 @@ import GalleryStory from "@/components/GalleryStory";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "A social jazz night — live music, good people, and a warm invitation to come along.",
+    "Photos from Pop Up Jazz Club — live music, local community, and good evenings in Herne Hill.",
 };
 
 export default function GalleryPage() {

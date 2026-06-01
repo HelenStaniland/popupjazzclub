@@ -4,32 +4,32 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Upcoming Pop Up Jazz Club nights — live music, local talent, and a relaxed evening with friends.",
+    "Upcoming Pop Up Jazz Club nights in Herne Hill — live music, local talent, and good company.",
 };
 
 const upcomingEvents = [
   {
     date: "Friday 14 June",
     title: "Standards & Swing",
-    venue: "The Old Village Hall, Surrey",
+    venue: "Herne Hill",
     description:
-      "An evening of jazz standards with local singers and musicians. Bring friends, grab a table, and enjoy the show.",
+      "An evening of jazz standards with local singers and musicians. Bring friends and grab a table.",
     status: "On sale",
   },
   {
     date: "Saturday 28 June",
     title: "Vocal Jazz Night",
-    venue: "Community Hall, Sussex",
+    venue: "Herne Hill",
     description:
-      "Three local vocalists and a house band — come along to support them and meet other music lovers in the room.",
+      "Local vocalists and a house band — come along to support them or discover someone new.",
     status: "On sale",
   },
   {
     date: "Friday 12 July",
     title: "Summer Jazz Social",
-    venue: "Location TBC",
+    venue: "Herne Hill",
     description:
-      "Our summer get-together — live music, good chat, and a relaxed night out. Join the mailing list to hear when tickets go on sale.",
+      "Our summer get-together. Join the mailing list to hear when tickets go on sale.",
     status: "Coming soon",
   },
 ];
@@ -44,9 +44,8 @@ export default function EventsPage() {
             Upcoming nights
           </h1>
           <p className="mt-6 max-w-2xl text-cream-muted">
-            Each event is a one-off social jazz night — live music, local
-            performers, and a room full of friends and neighbours. Come as you
-            are.
+            Jazz nights in Herne Hill — live music, local performers, and a
+            friendly crowd. Come as you are.
           </p>
         </div>
       </section>
@@ -98,14 +97,14 @@ export default function EventsPage() {
           </div>
 
           <p className="mt-12 text-center text-sm text-cream-muted">
-            Want to hear about the next one?{" "}
+            New to Pop Up Jazz Club?{" "}
             <a
               href="/join"
               className="text-gold transition-colors hover:text-gold-light"
             >
               Join the Club
             </a>{" "}
-            and we&apos;ll keep you posted.
+            and we&apos;ll let you know about the next night.
           </p>
         </div>
       </section>

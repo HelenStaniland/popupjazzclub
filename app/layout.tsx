@@ -18,11 +18,11 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pop Up Jazz Club | Intimate Jazz Nights",
+    default: "Pop Up Jazz Club | Social Jazz Nights",
     template: "%s | Pop Up Jazz Club",
   },
   description:
-    "Pop Up Jazz Club transforms ordinary spaces into intimate jazz clubs. Live music, great company, bring your own bottle.",
+    "A welcoming social jazz night — local singers, musicians, friends and audiences coming together for live music and good company.",
 };
 
 export default function RootLayout({

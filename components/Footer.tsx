@@ -9,8 +9,8 @@ export default function Footer() {
           <div>
             <p className="font-serif text-xl text-cream">Pop Up Jazz Club</p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream-muted">
-              Transforming ordinary spaces into intimate jazz clubs — live
-              music, great company, bring your own bottle.
+              A welcoming social jazz night — local talent, live music, and
+              good company. Bring your own bottle.
             </p>
           </div>
 
@@ -45,7 +45,7 @@ export default function Footer() {
               </a>
             </p>
             <p className="mt-2 text-sm text-cream-muted">
-              Follow us for upcoming dates and venue reveals.
+              Drop us a line or follow along for upcoming dates.
             </p>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Pop Up Jazz Club. All rights reserved.
           </p>
           <p className="text-xs italic text-cream-muted/70">
-            Live music. Great company. Bring your own bottle.
+            Live music. Good company. Bring your own bottle.
           </p>
         </div>
       </div>

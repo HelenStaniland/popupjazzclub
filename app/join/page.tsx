@@ -4,7 +4,7 @@ import JoinForm from "@/components/JoinForm";
 export const metadata: Metadata = {
   title: "Join the Club",
   description:
-    "Join Pop Up Jazz Club for early access to events, venue reveals, and exclusive updates.",
+    "Join the Pop Up Jazz Club mailing list — hear about upcoming social jazz nights, local performers, and ticket news.",
 };
 
 export default function JoinPage() {
@@ -20,11 +20,12 @@ export default function JoinPage() {
             Join the Club
           </p>
           <h1 className="mt-4 font-serif text-4xl font-light text-cream sm:text-5xl">
-            Be first through the door
+            Stay in the loop
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-muted">
-            Join our mailing list for early ticket access, venue reveals, and
-            occasional notes from the band. No spam — just jazz.
+            Sign up to hear about upcoming nights, who&apos;s performing, and
+            when tickets go on sale. No spam — just the occasional note about
+            a great night out.
           </p>
         </div>
       </section>
@@ -35,26 +36,26 @@ export default function JoinPage() {
 
           <div className="mt-16 text-center">
             <h2 className="font-serif text-2xl font-light text-cream">
-              Member perks
+              Why join?
             </h2>
             <ul className="mt-8 space-y-4 text-sm text-cream-muted">
               <li className="flex items-center justify-center gap-3">
                 <span className="text-gold" aria-hidden>
                   ✦
                 </span>
-                Early access to tickets before public release
+                Hear when new events are announced
               </li>
               <li className="flex items-center justify-center gap-3">
                 <span className="text-gold" aria-hidden>
                   ✦
                 </span>
-                Venue reveals sent directly to your inbox
+                Find out who&apos;s performing each night
               </li>
               <li className="flex items-center justify-center gap-3">
                 <span className="text-gold" aria-hidden>
                   ✦
                 </span>
-                Occasional exclusive events for members
+                Be part of a growing community of music lovers
               </li>
             </ul>
           </div>

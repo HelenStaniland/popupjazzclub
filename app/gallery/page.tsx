@@ -5,7 +5,7 @@ import { galleryImages } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Photos from Pop Up Jazz Club events — intimate jazz nights in transformed spaces.",
+    "Photos from Pop Up Jazz Club nights — live music, good company, and shared experiences.",
 };
 
 export default function GalleryPage() {
@@ -15,11 +15,12 @@ export default function GalleryPage() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-gold">Gallery</p>
           <h1 className="mt-4 font-serif text-4xl font-light text-cream sm:text-5xl">
-            Moments from the club
+            Shared nights out
           </h1>
           <p className="mt-6 max-w-2xl text-cream-muted">
-            A collection of evenings past — placeholder images for now, ready
-            to be replaced with your own photography.
+            Snapshots from past evenings — friends supporting friends, live
+            music, and rooms full of good company. Placeholder images for now,
+            ready to swap for your own photos.
           </p>
         </div>
       </section>

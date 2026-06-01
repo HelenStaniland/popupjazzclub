@@ -11,7 +11,7 @@ export default function AboutSection() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border bg-surface-elevated">
               <Image
                 src="https://images.unsplash.com/photo-1520523839897-bd05543f18a5?w=800&q=80"
-                alt="Pop Up Jazz Club musicians and singers — group photograph placeholder"
+                alt="Pop Up Jazz Club — friends, singers and musicians together"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -27,25 +27,25 @@ export default function AboutSection() {
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gold">About</p>
             <h2 className="mt-4 font-serif text-3xl font-light text-cream sm:text-4xl">
-              The musicians &amp; singers behind the club
+              Friends, musicians &amp; neighbours
             </h2>
             <div className="mt-6 space-y-4 text-sm leading-relaxed text-cream-muted sm:text-base">
               <p>
-                Pop Up Jazz Club was born from a simple idea: jazz belongs in
-                intimate rooms, not vast auditoriums. We&apos;re a collective of
-                musicians, vocalists, and hosts who believe the best nights
-                happen when the music is close enough to feel.
+                Pop Up Jazz Club is a welcoming social jazz night where local
+                singers, musicians, friends and audiences come together. It
+                started as a way to share live music with the people we know —
+                and grew into something the whole community looks forward to.
               </p>
               <p>
-                Our rotating ensemble brings together seasoned jazz players and
-                rising voices, performing standards and originals in venues that
-                surprise and delight. Every event is curated — from the set list
-                to the lighting — to recreate the warmth of a classic jazz club,
-                wherever we land.
+                You might come to support a friend on stage, discover a new
+                singer from down the road, or simply enjoy a relaxed evening
+                with other music lovers. The room gets dressed with tables,
+                lighting and decoration to create a jazz club feel, but what
+                makes the night special is the people in it.
               </p>
               <p>
-                Whether you&apos;re a lifelong jazz lover or discovering the
-                genre for the first time, you&apos;re welcome at our table.
+                No dress code, no pretension — just good music, good company,
+                and a shared experience you&apos;ll want to come back to.
               </p>
             </div>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">

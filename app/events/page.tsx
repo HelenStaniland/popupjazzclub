@@ -3,7 +3,8 @@ import Button from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "Events",
-  description: "Upcoming Pop Up Jazz Club events — book tickets for intimate jazz nights.",
+  description:
+    "Upcoming Pop Up Jazz Club nights — live music, local talent, and a relaxed evening with friends.",
 };
 
 const upcomingEvents = [
@@ -12,23 +13,23 @@ const upcomingEvents = [
     title: "Standards & Swing",
     venue: "The Old Village Hall, Surrey",
     description:
-      "An evening of classic jazz standards with our full ensemble. Tables for two and four available.",
+      "An evening of jazz standards with local singers and musicians. Bring friends, grab a table, and enjoy the show.",
     status: "On sale",
   },
   {
     date: "Saturday 28 June",
     title: "Vocal Jazz Night",
-    venue: "Private Drawing Room, Sussex",
+    venue: "Community Hall, Sussex",
     description:
-      "Three vocalists, one piano trio, and a room full of candlelight. Venue revealed to ticket holders.",
+      "Three local vocalists and a house band — come along to support them and meet other music lovers in the room.",
     status: "On sale",
   },
   {
     date: "Friday 12 July",
     title: "Summer Jazz Social",
-    venue: "Location TBC — Join the Club for early access",
+    venue: "Location TBC",
     description:
-      "Our biggest night of the summer. Join the mailing list to hear the venue reveal first.",
+      "Our summer get-together — live music, good chat, and a relaxed night out. Join the mailing list to hear when tickets go on sale.",
     status: "Coming soon",
   },
 ];
@@ -43,8 +44,9 @@ export default function EventsPage() {
             Upcoming nights
           </h1>
           <p className="mt-6 max-w-2xl text-cream-muted">
-            Each event is a one-off — a single evening in a transformed space.
-            Book early; our intimate venues sell out quickly.
+            Each event is a one-off social jazz night — live music, local
+            performers, and a room full of friends and neighbours. Come as you
+            are.
           </p>
         </div>
       </section>
@@ -96,14 +98,14 @@ export default function EventsPage() {
           </div>
 
           <p className="mt-12 text-center text-sm text-cream-muted">
-            Can&apos;t see a date that suits?{" "}
+            Want to hear about the next one?{" "}
             <a
               href="/join"
               className="text-gold transition-colors hover:text-gold-light"
             >
               Join the Club
             </a>{" "}
-            to hear about new events first.
+            and we&apos;ll keep you posted.
           </p>
         </div>
       </section>

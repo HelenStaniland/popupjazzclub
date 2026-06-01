@@ -6,10 +6,10 @@ export default function FeaturePanels() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="mb-14 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-gold">
-            The experience
+            Why come along
           </p>
           <h2 className="mt-4 font-serif text-3xl font-light text-cream sm:text-4xl">
-            More than a gig
+            More than a gig — a night out together
           </h2>
         </div>
 

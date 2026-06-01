@@ -17,7 +17,7 @@ export default function Header() {
             Pop Up Jazz Club
           </span>
           <span className="text-[10px] uppercase tracking-[0.25em] text-cream-muted">
-            Intimate jazz nights
+            Social jazz nights
           </span>
         </Link>
 

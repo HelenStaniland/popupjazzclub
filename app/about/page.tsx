@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Pop Up Jazz Club — the musicians, singers, and hosts behind our intimate jazz nights.",
+    "Pop Up Jazz Club is a welcoming social jazz night — local singers, musicians, friends and audiences coming together.",
 };
 
 export default function AboutPage() {
@@ -18,8 +18,9 @@ export default function AboutPage() {
             Our story
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream-muted">
-            Pop Up Jazz Club transforms ordinary spaces into intimate jazz
-            clubs — one unforgettable evening at a time.
+            Pop Up Jazz Club brings local singers, musicians, friends and
+            audiences together for relaxed, welcoming jazz nights — stylish,
+            but never pretentious.
           </p>
         </div>
       </section>
@@ -30,7 +31,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border">
               <Image
                 src="https://images.unsplash.com/photo-1520523839897-bd05543f18a5?w=800&q=80"
-                alt="Pop Up Jazz Club collective — group photograph placeholder"
+                alt="Pop Up Jazz Club — community of friends, singers and musicians"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -39,27 +40,27 @@ export default function AboutPage() {
 
             <div className="space-y-6 text-sm leading-relaxed text-cream-muted sm:text-base">
               <h2 className="font-serif text-3xl font-light text-cream">
-                The people behind the music
+                Built by and for our community
               </h2>
               <p>
-                We started Pop Up Jazz Club because we missed the feeling of
-                sitting close to the band — hearing the breath between phrases,
-                catching a smile across the stage. Concert halls have their
-                place, but jazz was made for smaller rooms.
+                We started Pop Up Jazz Club because we wanted a place where
+                local musicians could perform, friends could come along to
+                support them, and everyone else could discover live jazz in a
+                relaxed, informal setting. No velvet ropes — just a good night
+                out.
               </p>
               <p>
-                Our collective includes pianists, double bass players,
-                saxophonists, drummers, and vocalists who perform together in
-                different combinations depending on the night. Some of us have
-                played internationally; others are the best-kept secrets of the
-                local scene. All of us share a love for the tradition and a
-                desire to make every guest feel like a regular.
+                The performers are people from the area — singers, pianists,
+                bass players, saxophonists and more, often playing together for
+                the first time. The audience is a mix of friends, family,
+                neighbours and anyone who loves music. That&apos;s what makes
+                each night feel personal.
               </p>
               <p>
-                Behind the scenes, a small team handles venue sourcing, set
-                design, and the details that turn a blank room into a club for
-                the evening — warm lighting, dressed tables, and a welcome that
-                sets the tone before the first note.
+                We transform each venue with table seating, warm lighting and
+                decoration to create a jazz club atmosphere — but the focus is
+                always on people, participation and connection. Come to hear
+                live music, stay to meet someone new.
               </p>
             </div>
           </div>
@@ -75,16 +76,16 @@ export default function AboutPage() {
             <div className="mt-10 grid gap-8 sm:grid-cols-3">
               {[
                 {
-                  title: "Arrive & settle",
-                  text: "Doors open early. Find your table, pour a glass, and soak in the atmosphere.",
+                  title: "Arrive & settle in",
+                  text: "Doors open early. Find a table with friends, pour a drink, and ease into the evening.",
                 },
                 {
-                  title: "Two sets of live jazz",
-                  text: "Acoustic performances with a short interval. The music is the centrepiece.",
+                  title: "Live local music",
+                  text: "Two sets from singers and musicians in the community, with a short break to chat and refuel.",
                 },
                 {
                   title: "Stay & socialise",
-                  text: "Linger afterwards — many of our best friendships start at the bar.",
+                  text: "Stick around afterwards — plenty of people do, and it's often the best part of the night.",
                 },
               ].map(({ title, text }) => (
                 <div key={title}>

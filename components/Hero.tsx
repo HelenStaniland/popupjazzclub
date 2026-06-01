@@ -18,10 +18,11 @@ export default function Hero() {
             Pop Up Jazz Club
           </p>
           <h1 className="font-serif text-4xl font-light leading-tight tracking-wide text-cream sm:text-5xl lg:text-6xl">
-            Intimate jazz nights in transformed spaces.
+            Live jazz, local talent, great nights out.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream-muted sm:text-xl">
-            Live music. Great company. Bring your own bottle.
+            A welcoming social jazz night — come for the music, stay for the
+            company. Bring your own bottle.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button href="/events">Book Tickets</Button>

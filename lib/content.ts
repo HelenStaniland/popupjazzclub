@@ -9,33 +9,33 @@ export const navLinks = [
 export const galleryImages = [
   {
     src: "https://images.unsplash.com/photo-1415201364774-f6f0f135b25b?w=800&q=80",
-    alt: "Saxophone player in warm stage lighting",
-    caption: "Live performance",
+    alt: "Local musician playing saxophone on stage",
+    caption: "Live music",
   },
   {
     src: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&q=80",
-    alt: "Intimate jazz club atmosphere with candlelight",
-    caption: "Club atmosphere",
+    alt: "Friends gathered around candlelit tables",
+    caption: "Good company",
   },
   {
     src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-    alt: "Vocalist performing with a jazz ensemble",
-    caption: "Vocal jazz",
+    alt: "Local singer performing with musicians",
+    caption: "Local talent",
   },
   {
     src: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80",
-    alt: "Audience enjoying live music in an intimate venue",
-    caption: "Great company",
+    alt: "Audience chatting and enjoying the music together",
+    caption: "Shared nights out",
   },
   {
     src: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80",
-    alt: "Piano keys in soft golden light",
-    caption: "Piano trio",
+    alt: "Pianist playing during a relaxed jazz evening",
+    caption: "Relaxed vibes",
   },
   {
     src: "https://images.unsplash.com/photo-1507838153414-b4b7137a6581?w=800&q=80",
-    alt: "Transformed space set up for an evening of jazz",
-    caption: "Unexpected spaces",
+    alt: "Community hall dressed with tables, lighting and decoration",
+    caption: "Transformed spaces",
   },
 ] as const;
 
@@ -43,19 +43,19 @@ export const features = [
   {
     title: "Live Music",
     description:
-      "Acoustic jazz performed up close — standards, swing, and soul delivered by talented musicians who play for the room, not the rafters.",
+      "Local singers and musicians take to the stage — standards, swing, and songs you know and love, played by people from your community.",
     icon: "♪",
   },
   {
-    title: "Club Atmosphere",
+    title: "Good Company",
     description:
-      "Candlelit tables, low lights, and the hum of conversation. Dress up or come as you are — every night feels like your own private club.",
+      "Come to hear a friend perform, meet other music lovers, or just enjoy a relaxed night out. Everyone's welcome — no jazz knowledge required.",
     icon: "✦",
   },
   {
-    title: "Unexpected Spaces",
+    title: "Transformed Spaces",
     description:
-      "From village halls to drawing rooms, we transform ordinary places into intimate jazz clubs for one unforgettable evening.",
+      "We dress a hall or room with tables, lighting and decoration to create a jazz club feel — but the real magic is the people in the room.",
     icon: "◈",
   },
 ] as const;

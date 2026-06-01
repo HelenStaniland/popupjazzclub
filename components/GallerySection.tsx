@@ -22,11 +22,12 @@ export default function GallerySection({
               Gallery
             </p>
             <h2 className="mt-4 font-serif text-3xl font-light text-cream sm:text-4xl">
-              A glimpse inside
+              Nights to remember
             </h2>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-cream-muted">
-              Warm lights, close quarters, and the magic of live jazz in spaces
-              you&apos;d never expect.
+              Friends cheering on friends, conversations between sets, and
+              local musicians doing what they love — all in a room that feels
+              just a little bit special.
             </p>
           </div>
           {showViewAll && (

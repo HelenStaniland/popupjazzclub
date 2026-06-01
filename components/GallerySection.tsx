@@ -25,9 +25,8 @@ export default function GallerySection({
               Nights to remember
             </h2>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-cream-muted">
-              Friends cheering on friends, conversations between sets, and
-              local musicians doing what they love — all in a room that feels
-              just a little bit special.
+              Red-clothed tables, candlelight, a live band, and a room full of
+              friends — real nights from Pop Up Jazz Club.
             </p>
           </div>
           {showViewAll && (

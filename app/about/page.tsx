@@ -30,8 +30,8 @@ export default function AboutPage() {
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border">
               <Image
-                src="https://images.unsplash.com/photo-1520523839897-bd05543f18a5?w=800&q=80"
-                alt="Pop Up Jazz Club — community of friends, singers and musicians"
+                src="/gallery/CurtainCall.jpg"
+                alt="Pop Up Jazz Club singers and musicians together on stage"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -57,10 +57,11 @@ export default function AboutPage() {
                 each night feel personal.
               </p>
               <p>
-                We transform each venue with table seating, warm lighting and
-                decoration to create a jazz club atmosphere — but the focus is
-                always on people, participation and connection. Come to hear
-                live music, stay to meet someone new.
+                We transform each venue with red tablecloths, candlelit tables,
+                warm lighting and simple decoration to create a jazz club
+                atmosphere — but the focus is always on people, participation
+                and connection. Come to hear live music, stay to meet someone
+                new.
               </p>
             </div>
           </div>

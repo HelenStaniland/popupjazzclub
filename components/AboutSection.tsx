@@ -10,8 +10,8 @@ export default function AboutSection() {
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border bg-surface-elevated">
               <Image
-                src="https://images.unsplash.com/photo-1520523839897-bd05543f18a5?w=800&q=80"
-                alt="Pop Up Jazz Club — friends, singers and musicians together"
+                src="/gallery/CurtainCall.jpg"
+                alt="Pop Up Jazz Club singers and musicians together on stage"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -37,11 +37,11 @@ export default function AboutSection() {
                 and grew into something the whole community looks forward to.
               </p>
               <p>
-                You might come to support a friend on stage, discover a new
-                singer from down the road, or simply enjoy a relaxed evening
-                with other music lovers. The room gets dressed with tables,
-                lighting and decoration to create a jazz club feel, but what
-                makes the night special is the people in it.
+                You might come to support a friend on stage, catch up with
+                neighbours over a glass of wine, or simply enjoy a relaxed
+                evening with other music lovers. The hall gets dressed with red
+                tablecloths, candles and lighting to create a jazz club feel —
+                but what makes the night special is the people in the room.
               </p>
               <p>
                 No dress code, no pretension — just good music, good company,

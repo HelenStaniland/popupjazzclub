@@ -12,7 +12,7 @@ export default function JoinPage() {
     <div>
       <section className="relative overflow-hidden border-b border-border/40 bg-surface py-16 sm:py-24">
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(140,55,68,0.14)_0%,transparent_70%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(120,45,95,0.16)_0%,transparent_70%)]"
           aria-hidden
         />
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8">

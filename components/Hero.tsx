@@ -4,11 +4,11 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(140,55,68,0.18)_0%,transparent_55%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(120,45,95,0.2)_0%,transparent_55%)]"
         aria-hidden
       />
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(110,40,52,0.12)_0%,transparent_50%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(85,35,80,0.14)_0%,transparent_50%)]"
         aria-hidden
       />
 

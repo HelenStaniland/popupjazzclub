@@ -36,7 +36,7 @@ export default function HomeFriends() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-sm border border-border bg-background">
+          <div className="mx-auto max-w-[288px] overflow-hidden rounded-sm border border-border bg-background sm:max-w-[346px] lg:mx-0 lg:max-w-[288px] xl:max-w-[346px]">
             <Image
               src="/gallery/AudienceGold.jpeg"
               alt="Guests enjoying the warm atmosphere of the evening"

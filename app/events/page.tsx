@@ -9,28 +9,20 @@ export const metadata: Metadata = {
 
 const upcomingEvents = [
   {
-    date: "Friday 14 June",
-    title: "Standards & Swing",
+    date: "Friday 11 September 2026",
+    title: "Vocal Jazz Jam",
     venue: "Herne Hill",
     description:
-      "An evening of jazz standards with local singers and musicians. Bring friends and grab a table.",
+      "An open, welcoming evening of vocal jazz — local singers, the house band, and a room full of encouragement. Bring a bottle and come along.",
     status: "On sale",
   },
   {
-    date: "Saturday 28 June",
-    title: "Vocal Jazz Night",
+    date: "Saturday 10 October 2026",
+    title: "Pop Up Jazz at the Herne Hill Music Festival",
     venue: "Herne Hill",
     description:
-      "Local vocalists and a house band — come along to support them or discover someone new.",
+      "Pop Up Jazz Club joins the Herne Hill Music Festival for an evening of live jazz, local voices and good company.",
     status: "On sale",
-  },
-  {
-    date: "Friday 12 July",
-    title: "Summer Jazz Social",
-    venue: "Herne Hill",
-    description:
-      "Our summer get-together. Join the mailing list to hear when tickets go on sale.",
-    status: "Coming soon",
   },
 ];
 

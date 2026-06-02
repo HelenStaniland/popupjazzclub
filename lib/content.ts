@@ -39,6 +39,52 @@ export const singerPhotos = [
     src: "/gallery/Singer8.png",
     alt: "Local singer performing on stage with the house band",
   },
+  {
+    src: "/gallery/Singer9.png",
+    alt: "Local singer performing on stage",
+  },
+] as const;
+
+export const musicWidePhotos = [
+  {
+    src: "/gallery/SingerWithBand.png",
+    alt: "Local singer performing with the full house band",
+  },
+  {
+    src: "/gallery/Duet.jpg",
+    alt: "Two local singers performing a duet on stage",
+  },
+  {
+    src: "/gallery/SingerBandInteraction.png",
+    alt: "Singer and house band sharing a moment on stage",
+  },
+  {
+    src: "/gallery/SingerDrummer.png",
+    alt: "Local singer performing with the drummer",
+  },
+] as const;
+
+export const communityPhotos = [
+  {
+    src: "/gallery/AfterParty.jpg",
+    alt: "Friends chatting and enjoying the evening together",
+  },
+  {
+    src: "/gallery/WholeAudience.jpg",
+    alt: "A full room of friends, neighbours and music lovers",
+  },
+  {
+    src: "/gallery/AudienceGold.jpeg",
+    alt: "Guests enjoying the warm atmosphere of the evening",
+  },
+  {
+    src: "/gallery/FromTheStage.jpg",
+    alt: "Audience members talking and laughing during the performance",
+  },
+  {
+    src: "/gallery/Audience.jpg",
+    alt: "Friends and neighbours socialising between sets",
+  },
 ] as const;
 
 export const houseBandPhotos = [
@@ -47,20 +93,34 @@ export const houseBandPhotos = [
     alt: "The house band together on stage",
   },
   {
-    src: "/gallery/HouseBand.png",
-    alt: "The house band performing with a singer",
+    src: "/gallery/SingerBandInteraction.png",
+    alt: "The house band with a singer on stage",
+  },
+  {
+    src: "/gallery/SingerDrummer.png",
+    alt: "Singer performing with the drummer",
+  },
+  {
+    src: "/gallery/KeyboardHands.png",
+    alt: "The house band in performance",
   },
 ] as const;
 
+export const houseBandDetailPhotos = [
+  { src: "/gallery/Keyboards.jpg", alt: "Pianist with the house band" },
+  { src: "/gallery/Bass.jpg", alt: "Double bass player with the house band" },
+  { src: "/gallery/Drummer.png", alt: "Drummer with the house band" },
+] as const;
+
 export const galleryImages = [
-  { src: "/gallery/Duet.jpg", alt: "Two local singers performing a duet", caption: "Duet" },
-  { src: "/gallery/Singer1.jpg", alt: "Local singer performing on stage", caption: "Local voices" },
+  { src: "/gallery/SingerWithBand.png", alt: "Local singer with the house band", caption: "Live music" },
   { src: "/gallery/Singer8.png", alt: "Local singer performing on stage", caption: "Local voices" },
+  { src: "/gallery/Duet.jpg", alt: "Two local singers performing a duet", caption: "Duet" },
   { src: "/gallery/SmilingBand.png", alt: "The house band together on stage", caption: "House band" },
-  { src: "/gallery/FromTheStage.jpg", alt: "Audience enjoying the evening together", caption: "The community" },
-  { src: "/gallery/Keyboards.jpg", alt: "Pianist playing with the house band", caption: "House band" },
-  { src: "/gallery/Bass.jpg", alt: "Double bass player on stage", caption: "Double bass" },
-  { src: "/gallery/FromAbove.jpg", alt: "Candlelit tables in a warmly lit room", caption: "The room" },
+  { src: "/gallery/AfterParty.jpg", alt: "Friends chatting after the performance", caption: "Good company" },
+  { src: "/gallery/AudienceGold.jpeg", alt: "Guests enjoying the evening", caption: "The community" },
+  { src: "/gallery/WholeAudience.jpg", alt: "Everyone together in the room", caption: "Everyone together" },
+  { src: "/gallery/CurtainCall.jpg", alt: "Singers and musicians at curtain call", caption: "Curtain call" },
 ] as const;
 
 export const galleryStory = [
@@ -71,9 +131,9 @@ export const galleryStory = [
     layout: "singers",
     images: [
       {
-        src: "/gallery/Duet.jpg",
-        alt: "Two local singers performing a duet on stage",
-        caption: "Duets and collaborations.",
+        src: "/gallery/SingerWithBand.png",
+        alt: "Local singer performing with the full house band",
+        caption: "Live on stage.",
       },
       ...singerPhotos.map(({ src, alt }) => ({
         src,
@@ -81,12 +141,34 @@ export const galleryStory = [
         caption: "Local voices.",
       })),
     ],
+    wideImages: [
+      {
+        src: "/gallery/Duet.jpg",
+        alt: "Two local singers performing a duet on stage",
+        caption: "Duets and collaborations.",
+      },
+      {
+        src: "/gallery/SingerBandInteraction.png",
+        alt: "Singer and house band together on stage",
+        caption: "Singers and musicians.",
+      },
+      {
+        src: "/gallery/SingerDrummer.png",
+        alt: "Local singer performing with the drummer",
+        caption: "With the house band.",
+      },
+      {
+        src: "/gallery/CurtainCall.jpg",
+        alt: "Singers and musicians taking a curtain call",
+        caption: "End of the night.",
+      },
+    ],
   },
   {
     id: "the-house-band",
     label: "The House Band",
     tagline: "The same musicians backing every singer through the evening.",
-    layout: "pair",
+    layout: "house-band",
     images: [
       {
         src: "/gallery/SmilingBand.png",
@@ -94,9 +176,19 @@ export const galleryStory = [
         caption: "Piano, double bass and drums.",
       },
       {
+        src: "/gallery/KeyboardHands.png",
+        alt: "The house band in performance",
+        caption: "Supporting local voices.",
+      },
+      {
         src: "/gallery/HouseBand.png",
         alt: "The house band performing with a singer",
-        caption: "Supporting local voices.",
+        caption: "Backing every singer.",
+      },
+      {
+        src: "/gallery/SingerDrummer.png",
+        alt: "Singer performing with the drummer",
+        caption: "Piano, bass and drums.",
       },
     ],
   },
@@ -104,19 +196,12 @@ export const galleryStory = [
     id: "the-community",
     label: "The Community",
     tagline: "Friends, supporters, and fellow music lovers.",
-    layout: "pair",
-    images: [
-      {
-        src: "/gallery/AfterParty.jpg",
-        alt: "Friends chatting and enjoying the evening together",
-        caption: "After the music — conversation and laughter.",
-      },
-      {
-        src: "/gallery/Audience.jpg",
-        alt: "Audience members socialising at tables between sets",
-        caption: "Supporting someone you know.",
-      },
-    ],
+    layout: "community",
+    images: communityPhotos.map(({ src, alt }) => ({
+      src,
+      alt,
+      caption: "Good company.",
+    })),
   },
   {
     id: "herne-hill",

@@ -1,32 +1,29 @@
 /*
   Pop Up Jazz Club — theme color backup
-  Saved: current palette before purple review tweak
+  Current approved palette (lighter purple)
 
-  TO REVERT:
-  1. Copy the :root and ::selection blocks below into app/globals.css
-     (replace the matching blocks there).
-  2. Set glow variables in globals.css to the GLOW values below.
-  3. Or ask Cursor: "Revert to theme-colors.backup.css"
+  TO REVERT to this palette:
+  Copy the :root block below into app/globals.css
 */
 
 :root {
-  --background: #0b0810;
+  --background: #201c32;
   --foreground: #f5f0e6;
   --cream: #f5f0e6;
-  --cream-muted: #c4bcc8;
-  --gold: #a8557a;
-  --gold-light: #c47aa3;
-  --gold-dark: #6b3860;
-  --surface: #15101c;
-  --surface-elevated: #1f1728;
-  --border: rgba(157, 80, 128, 0.24);
-  --glow-hero: rgba(120, 45, 95, 0.18);
-  --glow-join: rgba(120, 45, 95, 0.16);
-  --glow-gallery: rgba(120, 45, 95, 0.15);
-  --glow-selection: rgba(120, 45, 95, 0.35);
+  --cream-muted: #cac0d6;
+  --gold: #a45896;
+  --gold-light: #c078b8;
+  --gold-dark: #6a3a70;
+  --surface: #2a253c;
+  --surface-elevated: #38324e;
+  --border: rgba(150, 75, 145, 0.26);
+  --glow-hero: rgba(112, 48, 128, 0.14);
+  --glow-join: rgba(112, 48, 128, 0.12);
+  --glow-gallery: rgba(112, 48, 128, 0.11);
+  --glow-selection: rgba(112, 48, 128, 0.28);
 }
 
 ::selection {
-  background: rgba(120, 45, 95, 0.35);
+  background: rgba(112, 48, 128, 0.28);
   color: var(--cream);
 }

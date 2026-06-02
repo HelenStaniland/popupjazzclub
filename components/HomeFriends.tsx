@@ -1,22 +1,8 @@
 import Image from "next/image";
-
-const communityPhotos = [
-  {
-    src: "/gallery/AfterParty.jpg",
-    alt: "Friends chatting and enjoying the evening together",
-  },
-  {
-    src: "/gallery/FromTheStage.jpg",
-    alt: "Audience members talking and laughing during the performance",
-  },
-  {
-    src: "/gallery/Audience.jpg",
-    alt: "Friends and neighbours socialising between sets",
-  },
-] as const;
+import { communityPhotos } from "@/lib/content";
 
 export default function HomeFriends() {
-  const [featured, ...rest] = communityPhotos;
+  const [featured, wide, ...rest] = communityPhotos;
 
   return (
     <section className="bg-surface py-24 sm:py-32">
@@ -40,7 +26,7 @@ export default function HomeFriends() {
           </p>
         </div>
 
-        <div className="mt-12 lg:mt-16">
+        <div className="mt-12 space-y-4 lg:mt-16">
           <figure className="overflow-hidden rounded-sm border border-border">
             <div className="relative aspect-[16/10] sm:aspect-[2/1]">
               <Image
@@ -52,7 +38,18 @@ export default function HomeFriends() {
               />
             </div>
           </figure>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <figure className="overflow-hidden rounded-sm border border-border">
+            <div className="relative aspect-[16/10] sm:aspect-[2/1]">
+              <Image
+                src={wide.src}
+                alt={wide.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 1152px"
+                className="object-cover"
+              />
+            </div>
+          </figure>
+          <div className="grid gap-4 sm:grid-cols-3">
             {rest.map(({ src, alt }) => (
               <figure
                 key={src}
@@ -63,7 +60,7 @@ export default function HomeFriends() {
                     src={src}
                     alt={alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
+                    sizes="(max-width: 640px) 100vw, 33vw"
                     className="object-cover"
                   />
                 </div>

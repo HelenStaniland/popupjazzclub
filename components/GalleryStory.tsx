@@ -4,7 +4,11 @@ import Button from "@/components/Button";
 import { galleryStory } from "@/lib/content";
 
 type StorySection = (typeof galleryStory)[number];
-type StoryImage = StorySection["images"][number];
+type StoryImage = {
+  src: string;
+  alt: string;
+  caption: string;
+};
 
 function FeatureImage({
   image,
@@ -62,6 +66,9 @@ function SingersSection({
   const [featured, ...portraits] = section.images;
   if (!featured) return null;
 
+  const wideImages =
+    "wideImages" in section && section.wideImages ? section.wideImages : [];
+
   return (
     <section
       id={section.id}
@@ -94,13 +101,20 @@ function SingersSection({
               ))}
             </div>
           )}
+          {wideImages.length > 0 && (
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {wideImages.map((image) => (
+                <FeatureImage key={image.src} image={image} aspect="wide" />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
   );
 }
 
-function PairSection({
+function CommunitySection({
   section,
   priority,
   altBg,
@@ -109,8 +123,8 @@ function PairSection({
   priority?: boolean;
   altBg?: boolean;
 }) {
-  const [primary, secondary] = section.images;
-  if (!primary || !secondary) return null;
+  const [featured, wide, ...rest] = section.images;
+  if (!featured) return null;
 
   return (
     <section
@@ -119,17 +133,46 @@ function PairSection({
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeader label={section.label} tagline={section.tagline} />
-        <div className="mt-12 grid gap-8 lg:mt-16 lg:grid-cols-12 lg:items-start lg:gap-10">
-          <FeatureImage
-            image={primary}
-            priority={priority}
-            className="lg:col-span-8"
-          />
-          <FeatureImage
-            image={secondary}
-            aspect="tall"
-            className="lg:col-span-4"
-          />
+        <div className="mt-12 space-y-4 lg:mt-16">
+          <FeatureImage image={featured} priority={priority} aspect="wide" />
+          {wide && <FeatureImage image={wide} aspect="wide" />}
+          {rest.length > 0 && (
+            <div className="grid gap-4 sm:grid-cols-3">
+              {rest.map((image) => (
+                <FeatureImage key={image.src} image={image} aspect="wide" />
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HouseBandSection({
+  section,
+  priority,
+  altBg,
+}: {
+  section: StorySection;
+  priority?: boolean;
+  altBg?: boolean;
+}) {
+  const [featured, ...rest] = section.images;
+  if (!featured) return null;
+
+  return (
+    <section
+      id={section.id}
+      className={`scroll-mt-24 py-24 sm:py-32 lg:py-36 ${altBg ? "bg-surface" : ""}`}
+    >
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <SectionHeader label={section.label} tagline={section.tagline} />
+        <div className="mt-12 space-y-4 lg:mt-16">
+          <FeatureImage image={featured} priority={priority} aspect="wide" />
+          {rest.map((image) => (
+            <FeatureImage key={image.src} image={image} aspect="wide" />
+          ))}
         </div>
       </div>
     </section>
@@ -232,19 +275,27 @@ export default function GalleryStory() {
             />
           );
         }
+        if (section.layout === "house-band") {
+          return (
+            <HouseBandSection
+              key={section.id}
+              section={section}
+              altBg={altBg}
+            />
+          );
+        }
+        if (section.layout === "community") {
+          return (
+            <CommunitySection
+              key={section.id}
+              section={section}
+              altBg={altBg}
+            />
+          );
+        }
         if (section.layout === "text") {
           return (
             <TextSection key={section.id} section={section} altBg={altBg} />
-          );
-        }
-        if (section.layout === "pair") {
-          return (
-            <PairSection
-              key={section.id}
-              section={section}
-              priority={index === 0}
-              altBg={altBg}
-            />
           );
         }
         return (

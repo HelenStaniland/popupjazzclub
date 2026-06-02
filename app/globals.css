@@ -6,20 +6,20 @@
 */
 
 :root {
-  --background: #161323;
+  --background: #201c32;
   --foreground: #f5f0e6;
   --cream: #f5f0e6;
   --cream-muted: #cac0d6;
   --gold: #a45896;
   --gold-light: #c078b8;
   --gold-dark: #6a3a70;
-  --surface: #1f1930;
-  --surface-elevated: #2b2440;
+  --surface: #2a253c;
+  --surface-elevated: #38324e;
   --border: rgba(150, 75, 145, 0.26);
-  --glow-hero: rgba(112, 48, 128, 0.16);
-  --glow-join: rgba(112, 48, 128, 0.14);
-  --glow-gallery: rgba(112, 48, 128, 0.13);
-  --glow-selection: rgba(112, 48, 128, 0.32);
+  --glow-hero: rgba(112, 48, 128, 0.14);
+  --glow-join: rgba(112, 48, 128, 0.12);
+  --glow-gallery: rgba(112, 48, 128, 0.11);
+  --glow-selection: rgba(112, 48, 128, 0.28);
 }
 
 @theme inline {

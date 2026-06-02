@@ -33,8 +33,8 @@ export default function AboutPage() {
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border">
               <Image
-                src="/gallery/Duet.jpg"
-                alt="Two local singers performing a duet on stage"
+                src="/gallery/SingerBandInteraction.png"
+                alt="Singers and musicians together on stage"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -85,8 +85,8 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-border lg:order-2">
               <Image
-                src="/gallery/SmilingBand.png"
-                alt="The house band together on stage"
+                src="/gallery/SingerWithBand.png"
+                alt="Local singer performing with the full house band"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

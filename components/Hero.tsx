@@ -25,8 +25,8 @@ export default function Hero() {
 
           <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-border sm:aspect-[4/5]">
             <Image
-              src="/gallery/Singer1.jpg"
-              alt="Local singer performing live at Pop Up Jazz Club"
+              src="/gallery/SingerKeyboard.png"
+              alt="Local singer performing with the pianist at Pop Up Jazz Club"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"

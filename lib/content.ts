@@ -6,72 +6,81 @@ export const navLinks = [
   { href: "/join", label: "Join the Club" },
 ] as const;
 
+export const singerPhotos = [
+  {
+    src: "/gallery/Singer1.jpg",
+    alt: "Local singer performing with the house band",
+  },
+  {
+    src: "/gallery/Singer2.jpg",
+    alt: "Local singer performing on stage",
+  },
+  {
+    src: "/gallery/Singer3.jpg",
+    alt: "Local singer at the microphone",
+  },
+  {
+    src: "/gallery/Singer4.jpg",
+    alt: "Local singer performing a jazz standard",
+  },
+  {
+    src: "/gallery/Singer5.jpg",
+    alt: "Local singer at the microphone",
+  },
+  {
+    src: "/gallery/Singer6.jpg",
+    alt: "Local singer performing on stage",
+  },
+  {
+    src: "/gallery/Singer7.jpg",
+    alt: "Local singer performing with the house band",
+  },
+] as const;
+
 export const galleryImages = [
-  {
-    src: "/gallery/Stage.jpg",
-    alt: "Local musicians performing live on stage",
-    caption: "Live music",
-  },
-  {
-    src: "/gallery/WholeAudience.jpg",
-    alt: "A full room of friends and neighbours enjoying the evening",
-    caption: "Familiar faces",
-  },
-  {
-    src: "/gallery/FromTheStage.jpg",
-    alt: "Guests chatting at tables during the performance",
-    caption: "Good company",
-  },
-  {
-    src: "/gallery/CurtainCall.jpg",
-    alt: "Singers and musicians together at curtain call",
-    caption: "Local talent",
-  },
-  {
-    src: "/gallery/Audience.jpg",
-    alt: "Friends socialising between sets",
-    caption: "Relaxed evenings",
-  },
-  {
-    src: "/gallery/FromAbove.jpg",
-    alt: "A warm, candlelit room full of people",
-    caption: "The room",
-  },
+  { src: "/gallery/Duet.jpg", alt: "Two local singers performing a duet", caption: "Duet" },
+  { src: "/gallery/Singer1.jpg", alt: "Local singer performing on stage", caption: "Local voices" },
+  { src: "/gallery/Singer3.jpg", alt: "Local singer at the microphone", caption: "Live music" },
+  { src: "/gallery/AfterParty.jpg", alt: "Friends chatting after the performance", caption: "Good company" },
+  { src: "/gallery/FromTheStage.jpg", alt: "Audience enjoying the evening together", caption: "The community" },
+  { src: "/gallery/Keyboards.jpg", alt: "Pianist playing with the house band", caption: "House band" },
+  { src: "/gallery/Bass.jpg", alt: "Double bass player on stage", caption: "Double bass" },
+  { src: "/gallery/FromAbove.jpg", alt: "Candlelit tables in a warmly lit room", caption: "The room" },
 ] as const;
 
 export const galleryStory = [
   {
-    id: "live-music",
-    label: "Live Music",
-    tagline: "Jazz standards, favourites, and the occasional surprise.",
-    layout: "pair",
+    id: "the-music",
+    label: "The Music",
+    tagline: "Local singers, supported by a live band.",
+    layout: "singers",
     images: [
       {
-        src: "/gallery/Stage.jpg",
-        alt: "Local musicians on stage with double bass, drums, and keyboard",
-        caption: "On stage in Herne Hill.",
+        src: "/gallery/Duet.jpg",
+        alt: "Two local singers performing a duet on stage",
+        caption: "Duets and collaborations.",
       },
-      {
-        src: "/gallery/CurtainCall.jpg",
-        alt: "Singers and musicians arm in arm at curtain call",
-        caption: "Local singers and musicians.",
-      },
+      ...singerPhotos.map(({ src, alt }) => ({
+        src,
+        alt,
+        caption: "Local voices.",
+      })),
     ],
   },
   {
-    id: "the-people",
-    label: "The People",
-    tagline: "Friends supporting friends — and plenty of room for new ones.",
-    layout: "people",
+    id: "the-community",
+    label: "The Community",
+    tagline: "Friends, supporters, and fellow music lovers.",
+    layout: "pair",
     images: [
       {
-        src: "/gallery/WholeAudience.jpg",
-        alt: "A full room of guests enjoying live jazz together",
-        caption: "Everyone together.",
+        src: "/gallery/AfterParty.jpg",
+        alt: "Friends chatting and enjoying the evening together",
+        caption: "After the music — conversation and laughter.",
       },
       {
-        src: "/gallery/FromTheStage.jpg",
-        alt: "Guests chatting and enjoying drinks at tables",
+        src: "/gallery/Audience.jpg",
+        alt: "Audience members socialising at tables between sets",
         caption: "Supporting someone you know.",
       },
     ],
@@ -79,54 +88,42 @@ export const galleryStory = [
   {
     id: "herne-hill",
     label: "Herne Hill",
-    tagline: "A local night, rooted in the neighbourhood.",
-    layout: "single",
-    images: [
-      {
-        src: "/gallery/Audience.jpg",
-        alt: "Herne Hill friends and neighbours at a jazz evening",
-        caption: "The local musical community.",
-      },
-    ],
+    tagline: "Born in Herne Hill and open to everyone.",
+    layout: "text",
+    images: [],
   },
   {
     id: "the-room",
     label: "The Room",
-    tagline: "Warm lighting, table seating, and a relaxed jazz club feel.",
+    tagline: "Candles, tablecloths, and a jazz club feel for the evening.",
     layout: "single",
     images: [
       {
         src: "/gallery/FromAbove.jpg",
         alt: "Candlelit tables in a warmly lit room",
-        caption: "Pull up a chair.",
+        caption: "The setting for the night.",
       },
     ],
   },
 ] as const;
 
-export const features = [
+export const houseBand = [
   {
-    title: "Live Music",
-    description:
-      "Local singers and musicians sharing jazz standards, favourites and occasional surprises.",
-    icon: "♪",
+    name: "Piano",
+    src: "/gallery/Keyboards.jpg",
+    alt: "Pianist playing with the house band",
+    description: "Standards, accompaniment, and the occasional solo.",
   },
   {
-    title: "The People",
-    description:
-      "Friends supporting friends, audiences discovering new performers, and a welcoming atmosphere for newcomers.",
-    icon: "✦",
+    name: "Double bass",
+    src: "/gallery/Bass.jpg",
+    alt: "Double bass player on stage",
+    description: "The foundation of every set.",
   },
   {
-    title: "Herne Hill",
-    description:
-      "A local event rooted in the Herne Hill community and musical scene — choirs, musicians and music lovers from the area.",
-    icon: "◉",
-  },
-  {
-    title: "The Room",
-    description:
-      "Tables, candlelight and a jazz club feel for the evening. The setting supports the night — the people make it.",
-    icon: "◈",
+    name: "Drums",
+    src: "/gallery/Stage.jpg",
+    alt: "Drummer with the house band on stage",
+    description: "Swing, groove, and keeping the room moving.",
   },
 ] as const;

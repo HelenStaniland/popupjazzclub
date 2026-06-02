@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Pop Up Jazz Club",
   },
   description:
-    "Live jazz in Herne Hill — local singers, musicians, friends and music lovers together for enjoyable nights out.",
+    "A community jazz night in Herne Hill — local singers, musicians, friends and music lovers together.",
 };
 
 export default function RootLayout({

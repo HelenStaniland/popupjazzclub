@@ -15,14 +15,10 @@ function FeatureImage({
   image: StoryImage;
   priority?: boolean;
   className?: string;
-  aspect?: "wide" | "tall" | "cinematic";
+  aspect?: "wide" | "tall";
 }) {
   const aspectClass =
-    aspect === "tall"
-      ? "aspect-[3/4]"
-      : aspect === "cinematic"
-        ? "aspect-[21/9] sm:aspect-[2/1]"
-        : "aspect-[16/10] sm:aspect-[16/9]";
+    aspect === "tall" ? "aspect-[3/4]" : "aspect-[16/10] sm:aspect-[16/9]";
 
   return (
     <figure className={className}>
@@ -37,7 +33,6 @@ function FeatureImage({
           sizes="(max-width: 1024px) 100vw, 1152px"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
       </div>
       <figcaption className="mt-4 text-sm text-cream-muted">{image.caption}</figcaption>
     </figure>
@@ -55,20 +50,72 @@ function SectionHeader({ label, tagline }: { label: string; tagline: string }) {
   );
 }
 
-function PairSection({
+function SingersSection({
   section,
   priority,
+  altBg,
 }: {
   section: StorySection;
   priority?: boolean;
+  altBg?: boolean;
 }) {
-  const [primary, secondary] = section.images;
-  if (!secondary) return null;
+  const [featured, ...portraits] = section.images;
+  if (!featured) return null;
 
   return (
     <section
       id={section.id}
-      className="scroll-mt-24 py-24 sm:py-32 lg:py-36"
+      className={`scroll-mt-24 py-24 sm:py-32 lg:py-36 ${altBg ? "bg-surface" : ""}`}
+    >
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <SectionHeader label={section.label} tagline={section.tagline} />
+        <div className="mt-12 lg:mt-16">
+          <FeatureImage image={featured} priority={priority} aspect="wide" />
+          {portraits.length > 0 && (
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+              {portraits.map((image) => (
+                <figure
+                  key={image.src}
+                  className="overflow-hidden rounded-sm border border-border"
+                >
+                  <div className="relative aspect-[3/4] bg-surface-elevated">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="mt-2 text-xs text-cream-muted">
+                    {image.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PairSection({
+  section,
+  priority,
+  altBg,
+}: {
+  section: StorySection;
+  priority?: boolean;
+  altBg?: boolean;
+}) {
+  const [primary, secondary] = section.images;
+  if (!primary || !secondary) return null;
+
+  return (
+    <section
+      id={section.id}
+      className={`scroll-mt-24 py-24 sm:py-32 lg:py-36 ${altBg ? "bg-surface" : ""}`}
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeader label={section.label} tagline={section.tagline} />
@@ -89,36 +136,44 @@ function PairSection({
   );
 }
 
-function PeopleSection({ section }: { section: StorySection }) {
-  const [hero, ...rest] = section.images;
-
+function TextSection({
+  section,
+  altBg,
+}: {
+  section: StorySection;
+  altBg?: boolean;
+}) {
   return (
     <section
       id={section.id}
-      className="scroll-mt-24 bg-surface py-28 sm:py-36 lg:py-44"
+      className={`scroll-mt-24 py-24 sm:py-32 ${altBg ? "bg-surface" : ""}`}
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeader label={section.label} tagline={section.tagline} />
-        <div className="mt-12 lg:mt-16">
-          <FeatureImage image={hero} priority aspect="cinematic" />
-          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:mt-10">
-            {rest.map((image) => (
-              <FeatureImage key={image.src} image={image} />
-            ))}
-          </div>
-        </div>
+        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-cream-muted sm:text-base">
+          A community jazz night rooted in Herne Hill — part of the
+          area&apos;s musical life, open to everyone whether you know the
+          performers or not.
+        </p>
       </div>
     </section>
   );
 }
 
-function SingleSection({ section }: { section: StorySection }) {
+function SingleSection({
+  section,
+  altBg,
+}: {
+  section: StorySection;
+  altBg?: boolean;
+}) {
   const [image] = section.images;
+  if (!image) return null;
 
   return (
     <section
       id={section.id}
-      className="scroll-mt-24 py-24 sm:py-32 lg:py-36"
+      className={`scroll-mt-24 py-24 sm:py-32 lg:py-36 ${altBg ? "bg-surface" : ""}`}
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeader label={section.label} tagline={section.tagline} />
@@ -140,12 +195,11 @@ export default function GalleryStory() {
         />
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-gold">Gallery</p>
-          <h1 className="mt-5 max-w-2xl font-serif text-4xl font-light leading-tight text-cream sm:text-5xl lg:text-6xl">
-            Music, friends &amp; good evenings
+          <h1 className="mt-5 max-w-2xl font-serif text-4xl font-light leading-tight text-cream sm:text-5xl">
+            People, music &amp; good evenings
           </h1>
-          <p className="mt-6 max-w-md text-lg text-cream-muted">
-            Pop Up Jazz Club in Herne Hill — live music, local voices, and a
-            friendly crowd.
+          <p className="mt-6 max-w-md text-cream-muted">
+            Photos from Pop Up Jazz Club in Herne Hill.
           </p>
 
           <nav
@@ -166,8 +220,22 @@ export default function GalleryStory() {
       </section>
 
       {galleryStory.map((section, index) => {
-        if (section.layout === "people") {
-          return <PeopleSection key={section.id} section={section} />;
+        const altBg = index % 2 === 1;
+
+        if (section.layout === "singers") {
+          return (
+            <SingersSection
+              key={section.id}
+              section={section}
+              priority={index === 0}
+              altBg={altBg}
+            />
+          );
+        }
+        if (section.layout === "text") {
+          return (
+            <TextSection key={section.id} section={section} altBg={altBg} />
+          );
         }
         if (section.layout === "pair") {
           return (
@@ -175,19 +243,22 @@ export default function GalleryStory() {
               key={section.id}
               section={section}
               priority={index === 0}
+              altBg={altBg}
             />
           );
         }
-        return <SingleSection key={section.id} section={section} />;
+        return (
+          <SingleSection key={section.id} section={section} altBg={altBg} />
+        );
       })}
 
       <section className="border-t border-border/40 bg-surface py-24 sm:py-32">
         <div className="mx-auto max-w-6xl px-6 text-center lg:px-8">
           <p className="font-serif text-2xl font-light text-cream sm:text-3xl">
-            Fancy joining us?
+            Fancy coming along?
           </p>
           <p className="mx-auto mt-4 max-w-sm text-sm text-cream-muted">
-            See when the next Herne Hill night is on.
+            Live jazz, local voices, and a room full of friends.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/events">See upcoming events</Button>

@@ -1,15 +1,19 @@
-import AboutSection from "@/components/AboutSection";
-import FeaturePanels from "@/components/FeaturePanels";
-import GallerySection from "@/components/GallerySection";
 import Hero from "@/components/Hero";
+import HomeAbout from "@/components/HomeAbout";
+import HomeMusic from "@/components/HomeMusic";
+import HomeCommunity from "@/components/HomeCommunity";
+import HomeHouseBand from "@/components/HomeHouseBand";
+import HomeRoom from "@/components/HomeRoom";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <FeaturePanels />
-      <GallerySection />
-      <AboutSection />
+      <HomeAbout />
+      <HomeMusic />
+      <HomeCommunity />
+      <HomeHouseBand />
+      <HomeRoom />
     </>
   );
 }

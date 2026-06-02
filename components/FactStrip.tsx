@@ -1,7 +1,7 @@
 const facts = [
   "Station Hall, Herne Hill",
   "Bring Your Own Bottle",
-  "Community Jazz Night",
+  "Live House Band",
 ] as const;
 
 export default function FactStrip() {

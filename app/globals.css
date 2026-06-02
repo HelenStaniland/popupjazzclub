@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 /*
-  Theme colors — review variant (slightly more purple)
+  Theme colors — lighter purple variant
   To revert: copy :root and ::selection from theme-colors.backup.css
 */
 
 :root {
-  --background: #0a0812;
+  --background: #161323;
   --foreground: #f5f0e6;
   --cream: #f5f0e6;
-  --cream-muted: #c6bccf;
-  --gold: #a04d8a;
-  --gold-light: #c070b5;
-  --gold-dark: #663a6a;
-  --surface: #14101f;
-  --surface-elevated: #1c172b;
-  --border: rgba(145, 72, 138, 0.24);
-  --glow-hero: rgba(105, 38, 115, 0.18);
-  --glow-join: rgba(105, 38, 115, 0.16);
-  --glow-gallery: rgba(105, 38, 115, 0.15);
-  --glow-selection: rgba(105, 38, 115, 0.35);
+  --cream-muted: #cac0d6;
+  --gold: #a45896;
+  --gold-light: #c078b8;
+  --gold-dark: #6a3a70;
+  --surface: #1f1930;
+  --surface-elevated: #2b2440;
+  --border: rgba(150, 75, 145, 0.26);
+  --glow-hero: rgba(112, 48, 128, 0.16);
+  --glow-join: rgba(112, 48, 128, 0.14);
+  --glow-gallery: rgba(112, 48, 128, 0.13);
+  --glow-selection: rgba(112, 48, 128, 0.32);
 }
 
 @theme inline {

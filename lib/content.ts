@@ -35,13 +35,28 @@ export const singerPhotos = [
     src: "/gallery/Singer7.jpg",
     alt: "Local singer performing with the house band",
   },
+  {
+    src: "/gallery/Singer8.png",
+    alt: "Local singer performing on stage with the house band",
+  },
+] as const;
+
+export const houseBandPhotos = [
+  {
+    src: "/gallery/SmilingBand.png",
+    alt: "The house band together on stage",
+  },
+  {
+    src: "/gallery/HouseBand.png",
+    alt: "The house band performing with a singer",
+  },
 ] as const;
 
 export const galleryImages = [
   { src: "/gallery/Duet.jpg", alt: "Two local singers performing a duet", caption: "Duet" },
   { src: "/gallery/Singer1.jpg", alt: "Local singer performing on stage", caption: "Local voices" },
-  { src: "/gallery/Singer3.jpg", alt: "Local singer at the microphone", caption: "Live music" },
-  { src: "/gallery/AfterParty.jpg", alt: "Friends chatting after the performance", caption: "Good company" },
+  { src: "/gallery/Singer8.png", alt: "Local singer performing on stage", caption: "Local voices" },
+  { src: "/gallery/SmilingBand.png", alt: "The house band together on stage", caption: "House band" },
   { src: "/gallery/FromTheStage.jpg", alt: "Audience enjoying the evening together", caption: "The community" },
   { src: "/gallery/Keyboards.jpg", alt: "Pianist playing with the house band", caption: "House band" },
   { src: "/gallery/Bass.jpg", alt: "Double bass player on stage", caption: "Double bass" },
@@ -65,6 +80,24 @@ export const galleryStory = [
         alt,
         caption: "Local voices.",
       })),
+    ],
+  },
+  {
+    id: "the-house-band",
+    label: "The House Band",
+    tagline: "The same musicians backing every singer through the evening.",
+    layout: "pair",
+    images: [
+      {
+        src: "/gallery/SmilingBand.png",
+        alt: "The house band smiling together on stage",
+        caption: "Piano, double bass and drums.",
+      },
+      {
+        src: "/gallery/HouseBand.png",
+        alt: "The house band performing with a singer",
+        caption: "Supporting local voices.",
+      },
     ],
   },
   {

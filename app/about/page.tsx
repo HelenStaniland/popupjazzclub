@@ -85,8 +85,8 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-border lg:order-2">
               <Image
-                src="/gallery/Keyboards.jpg"
-                alt="Pianist playing with the house band"
+                src="/gallery/SmilingBand.png"
+                alt="The house band together on stage"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

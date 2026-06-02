@@ -23,14 +23,15 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-border sm:aspect-[4/5]">
+          <div className="overflow-hidden rounded-sm border border-border bg-surface">
             <Image
               src="/gallery/SingerKeyboard.png"
               alt="Local singer performing with the pianist at Pop Up Jazz Club"
-              fill
+              width={1065}
+              height={985}
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              className="h-auto w-full"
             />
           </div>
         </div>

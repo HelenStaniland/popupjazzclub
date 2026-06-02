@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import FactStrip from "@/components/FactStrip";
 import HomeWhatIs from "@/components/HomeWhatIs";
 import HomeLocalVoices from "@/components/HomeLocalVoices";
 import HomeFriends from "@/components/HomeFriends";
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <FactStrip />
       <HomeWhatIs />
       <HomeLocalVoices />
       <HomeFriends />

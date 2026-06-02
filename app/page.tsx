@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import HomeAbout from "@/components/HomeAbout";
+import HomeWhatIs from "@/components/HomeWhatIs";
 import HomeLocalVoices from "@/components/HomeLocalVoices";
 import HomeFriends from "@/components/HomeFriends";
 import HomeHouseBand from "@/components/HomeHouseBand";
@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <HomeAbout />
+      <HomeWhatIs />
       <HomeLocalVoices />
       <HomeFriends />
       <HomeHouseBand />

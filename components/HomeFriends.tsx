@@ -1,71 +1,50 @@
 import Image from "next/image";
-import { communityPhotos } from "@/lib/content";
 
 export default function HomeFriends() {
-  const [featured, wide, ...rest] = communityPhotos;
-
   return (
-    <section className="bg-surface py-24 sm:py-32">
+    <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <p className="text-xs uppercase tracking-[0.3em] text-gold">
-          The Community
-        </p>
-        <h2 className="mt-4 max-w-xl font-serif text-2xl font-light text-cream sm:text-3xl">
-          Friends supporting friends
-        </h2>
-        <div className="mt-6 max-w-2xl space-y-4 text-sm leading-relaxed text-cream-muted sm:text-base">
-          <p>
-            The audience are not passive spectators. They are friends, family,
-            supporters, and fellow music lovers — many of whom know the
-            performers personally.
-          </p>
-          <p>
-            Between sets there is conversation, laughter, and the easy warmth
-            of a gathering where newcomers are welcomed and familiar faces
-            abound.
-          </p>
-        </div>
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-gold">
+              The Community
+            </p>
+            <h2 className="mt-4 max-w-xl font-serif text-2xl font-light text-cream sm:text-3xl">
+              Friends Supporting Friends
+            </h2>
+            <div className="mt-6 max-w-2xl space-y-4 text-sm leading-relaxed text-cream-muted sm:text-base">
+              <p>
+                Many of our singers come from local choirs and music groups, and
+                for some, Pop Up Jazz Club is their first experience of singing
+                solo.
+              </p>
+              <p>
+                What makes the evening special is the encouragement people give
+                one another. Friends come to cheer each other on, performers
+                support new singers, and audience members often become performers
+                themselves.
+              </p>
+              <p>
+                Over time, the confidence grows. People who were nervous about
+                stepping onto the stage have returned to sing again, inspiring
+                others to have a go.
+              </p>
+              <p>
+                Every evening brings a mixture of familiar faces, new voices and
+                memorable moments.
+              </p>
+            </div>
+          </div>
 
-        <div className="mt-12 space-y-4 lg:mt-16">
-          <figure className="overflow-hidden rounded-sm border border-border">
-            <div className="relative aspect-[16/10] sm:aspect-[2/1]">
-              <Image
-                src={featured.src}
-                alt={featured.alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 1152px"
-                className="object-cover"
-              />
-            </div>
-          </figure>
-          <figure className="overflow-hidden rounded-sm border border-border">
-            <div className="relative aspect-[16/10] sm:aspect-[2/1]">
-              <Image
-                src={wide.src}
-                alt={wide.alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 1152px"
-                className="object-cover"
-              />
-            </div>
-          </figure>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {rest.map(({ src, alt }) => (
-              <figure
-                key={src}
-                className="overflow-hidden rounded-sm border border-border"
-              >
-                <div className="relative aspect-[16/10]">
-                  <Image
-                    src={src}
-                    alt={alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-              </figure>
-            ))}
+          <div className="overflow-hidden rounded-sm border border-border bg-background">
+            <Image
+              src="/gallery/AudienceGold.jpeg"
+              alt="Guests enjoying the warm atmosphere of the evening"
+              width={1200}
+              height={1600}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="h-auto w-full"
+            />
           </div>
         </div>
       </div>

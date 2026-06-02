@@ -45,26 +45,11 @@ export const singerPhotos = [
   },
 ] as const;
 
-export const musicWidePhotos = [
-  {
-    src: "/gallery/SingerWithBand.png",
-    alt: "Local singer performing with the full house band",
-  },
-  {
-    src: "/gallery/Duet.jpg",
-    alt: "Two local singers performing a duet on stage",
-  },
-  {
-    src: "/gallery/SingerBandInteraction.png",
-    alt: "Singer and house band sharing a moment on stage",
-  },
-  {
-    src: "/gallery/SingerDrummer.png",
-    alt: "Local singer performing with the drummer",
-  },
-] as const;
-
 export const communityPhotos = [
+  {
+    src: "/gallery/AudienceBanner.jpg",
+    alt: "Guests enjoying an evening at Pop Up Jazz Club",
+  },
   {
     src: "/gallery/AfterParty.jpg",
     alt: "Friends chatting and enjoying the evening together",
@@ -85,31 +70,6 @@ export const communityPhotos = [
     src: "/gallery/Audience.jpg",
     alt: "Friends and neighbours socialising between sets",
   },
-] as const;
-
-export const houseBandPhotos = [
-  {
-    src: "/gallery/SmilingBand.png",
-    alt: "The house band together on stage",
-  },
-  {
-    src: "/gallery/SingerBandInteraction.png",
-    alt: "The house band with a singer on stage",
-  },
-  {
-    src: "/gallery/SingerDrummer.png",
-    alt: "Singer performing with the drummer",
-  },
-  {
-    src: "/gallery/KeyboardHands.png",
-    alt: "The house band in performance",
-  },
-] as const;
-
-export const houseBandDetailPhotos = [
-  { src: "/gallery/Keyboards.jpg", alt: "Pianist with the house band" },
-  { src: "/gallery/Bass.jpg", alt: "Double bass player with the house band" },
-  { src: "/gallery/Drummer.png", alt: "Drummer with the house band" },
 ] as const;
 
 export const galleryImages = [
@@ -142,6 +102,16 @@ export const galleryStory = [
       })),
     ],
     wideImages: [
+      {
+        src: "/gallery/SingerKeyboard.png",
+        alt: "Local singer performing with the pianist",
+        caption: "With the house band.",
+      },
+      {
+        src: "/gallery/SmilingSingerBassist.png",
+        alt: "Local singer performing with the double bass player",
+        caption: "Local voices.",
+      },
       {
         src: "/gallery/Duet.jpg",
         alt: "Two local singers performing a duet on stage",
@@ -190,6 +160,21 @@ export const galleryStory = [
         alt: "Singer performing with the drummer",
         caption: "Piano, bass and drums.",
       },
+      {
+        src: "/gallery/Keyboards.jpg",
+        alt: "Pianist with the house band",
+        caption: "Piano.",
+      },
+      {
+        src: "/gallery/Bass.jpg",
+        alt: "Double bass player with the house band",
+        caption: "Double bass.",
+      },
+      {
+        src: "/gallery/Drummer.png",
+        alt: "Drummer with the house band",
+        caption: "Drums.",
+      },
     ],
   },
   {
@@ -220,6 +205,11 @@ export const galleryStory = [
         src: "/gallery/FromAbove.jpg",
         alt: "Candlelit tables in a warmly lit room",
         caption: "The setting for the night.",
+      },
+      {
+        src: "/gallery/Stage.jpg",
+        alt: "The stage during a performance",
+        caption: "The stage.",
       },
     ],
   },

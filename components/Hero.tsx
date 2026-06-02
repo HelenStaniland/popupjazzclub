@@ -18,17 +18,17 @@ export default function Hero() {
               Live jazz, local voices and great company.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-cream-muted">
-              A community jazz night in Herne Hill where singers, musicians,
-              friends and audiences come together. Bring your own bottle.
+              A community jazz night in Herne Hill where ordinary people find
+              the confidence to step onto the stage.
             </p>
           </div>
 
           <div className="overflow-hidden rounded-sm border border-border bg-surface">
             <Image
-              src="/gallery/SingerKeyboard.png"
-              alt="Local singer performing with the pianist at Pop Up Jazz Club"
-              width={1065}
-              height={985}
+              src="/gallery/Singer3.jpg"
+              alt="Local singer performing at Pop Up Jazz Club"
+              width={1200}
+              height={1600}
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="h-auto w-full"

@@ -210,8 +210,7 @@ function SingleSection({
   section: StorySection;
   altBg?: boolean;
 }) {
-  const [image] = section.images;
-  if (!image) return null;
+  if (section.images.length === 0) return null;
 
   return (
     <section
@@ -220,8 +219,10 @@ function SingleSection({
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeader label={section.label} tagline={section.tagline} />
-        <div className="mt-12 lg:mt-16">
-          <FeatureImage image={image} aspect="wide" />
+        <div className="mt-12 space-y-4 lg:mt-16">
+          {section.images.map((image) => (
+            <FeatureImage key={image.src} image={image} aspect="wide" />
+          ))}
         </div>
       </div>
     </section>

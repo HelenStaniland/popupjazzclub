@@ -1,22 +1,29 @@
 import Image from "next/image";
-import { houseBand } from "@/lib/content";
-import { SectionIntro } from "@/components/SectionParts";
+
+const bandPhotos = [
+  { src: "/gallery/Keyboards.jpg", alt: "Pianist with the house band" },
+  { src: "/gallery/Bass.jpg", alt: "Double bass player with the house band" },
+  { src: "/gallery/Drummer.png", alt: "Drummer with the house band" },
+] as const;
 
 export default function HomeHouseBand() {
   return (
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <SectionIntro label="The House Band" title="The musicians behind every set">
-          <p>
-            Local musicians provide the foundation for the evening — piano,
-            double bass, and drums backing each singer through the night.
-          </p>
-        </SectionIntro>
+        <p className="text-xs uppercase tracking-[0.3em] text-gold">
+          The House Band
+        </p>
+        <p className="mt-4 max-w-xl font-serif text-2xl font-light text-cream sm:text-3xl">
+          The same musicians backing every singer through the evening.
+        </p>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16">
-          {houseBand.map(({ name, src, alt, description }) => (
-            <figure key={name}>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-border bg-surface-elevated">
+        <div className="mt-12 grid gap-4 sm:grid-cols-3 lg:mt-16">
+          {bandPhotos.map(({ src, alt }) => (
+            <figure
+              key={src}
+              className="overflow-hidden rounded-sm border border-border"
+            >
+              <div className="relative aspect-[3/4] bg-surface-elevated">
                 <Image
                   src={src}
                   alt={alt}
@@ -25,12 +32,6 @@ export default function HomeHouseBand() {
                   className="object-cover"
                 />
               </div>
-              <figcaption className="mt-4">
-                <p className="font-serif text-xl text-gold">{name}</p>
-                <p className="mt-1 text-sm leading-relaxed text-cream-muted">
-                  {description}
-                </p>
-              </figcaption>
             </figure>
           ))}
         </div>

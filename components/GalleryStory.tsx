@@ -190,7 +190,7 @@ export default function GalleryStory() {
     <>
       <section className="relative overflow-hidden border-b border-border/40 bg-surface py-20 sm:py-28 lg:py-32">
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(120,45,95,0.15)_0%,transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--glow-gallery)_0%,transparent_60%)]"
           aria-hidden
         />
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8">

@@ -1,19 +1,19 @@
 import Hero from "@/components/Hero";
 import HomeAbout from "@/components/HomeAbout";
-import HomeMusic from "@/components/HomeMusic";
-import HomeCommunity from "@/components/HomeCommunity";
+import HomeLocalVoices from "@/components/HomeLocalVoices";
+import HomeFriends from "@/components/HomeFriends";
 import HomeHouseBand from "@/components/HomeHouseBand";
-import HomeRoom from "@/components/HomeRoom";
+import HomeJoinUs from "@/components/HomeJoinUs";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <HomeAbout />
-      <HomeMusic />
-      <HomeCommunity />
+      <HomeLocalVoices />
+      <HomeFriends />
       <HomeHouseBand />
-      <HomeRoom />
+      <HomeJoinUs />
     </>
   );
 }

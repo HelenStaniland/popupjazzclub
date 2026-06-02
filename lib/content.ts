@@ -122,7 +122,7 @@ export const houseBand = [
   },
   {
     name: "Drums",
-    src: "/gallery/Stage.jpg",
+    src: "/gallery/Drummer.png",
     alt: "Drummer with the house band on stage",
     description: "Swing, groove, and keeping the room moving.",
   },

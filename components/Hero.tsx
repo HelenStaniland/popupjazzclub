@@ -1,11 +1,10 @@
 import Image from "next/image";
-import Button from "@/components/Button";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border/40">
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(120,45,95,0.18)_0%,transparent_50%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,var(--glow-hero)_0%,transparent_50%)]"
         aria-hidden
       />
 
@@ -19,15 +18,9 @@ export default function Hero() {
               Live jazz, local voices and great company.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-cream-muted">
-              A community jazz night where singers, musicians, friends and
-              audiences come together. Bring your own bottle.
+              A community jazz night in Herne Hill where singers, musicians,
+              friends and audiences come together. Bring your own bottle.
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Button href="/events">Book Tickets</Button>
-              <Button href="/join" variant="outline">
-                Join the Club
-              </Button>
-            </div>
           </div>
 
           <div className="relative aspect-[3/4] overflow-hidden rounded-sm border border-border sm:aspect-[4/5]">
@@ -39,7 +32,6 @@ export default function Hero() {
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
           </div>
         </div>
       </div>

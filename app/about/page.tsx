@@ -57,9 +57,9 @@ export default function AboutPage() {
                 music lovers — not passive spectators.
               </p>
               <p>
-                The evening feels somewhere between a jazz club, a community
-                gathering, and a live music night with friends. That combination
-                is what makes it distinctive.
+                The evening feels somewhere between a jazz club, a party, and a
+                live music night with friends. That combination is what makes
+                it distinctive.
               </p>
             </div>
           </div>

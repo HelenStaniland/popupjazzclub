@@ -1,7 +1,7 @@
 import { popUpJazzClubVenue } from "@/lib/venue";
 
 export default function VenueDetails() {
-  const { title, addressLines, directionsUrl, mapEmbedUrl } = popUpJazzClubVenue;
+  const { title, addressLines, directionsUrl } = popUpJazzClubVenue;
 
   return (
     <div className="border-t border-border/40 pt-6">
@@ -24,16 +24,6 @@ export default function VenueDetails() {
           Open directions in Google Maps ↗
         </a>
       </p>
-      <div className="mt-4 max-w-md overflow-hidden rounded-sm border border-border bg-background">
-        <iframe
-          title="Map showing Station Hall, Herne Hill"
-          src={mapEmbedUrl}
-          className="h-44 w-full"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
-      </div>
     </div>
   );
 }

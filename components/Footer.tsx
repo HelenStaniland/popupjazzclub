@@ -67,7 +67,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Pop Up Jazz Club. All rights reserved.
           </p>
           <p className="text-xs italic text-cream-muted/70">
-            Herne Hill · Live music · Good company
+            Station Hall, Herne Hill · Bring Your Own Bottle · Live House Band
           </p>
         </div>
       </div>

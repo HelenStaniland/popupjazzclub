@@ -11,6 +11,4 @@ export const popUpJazzClubVenue = {
   formattedAddress: "Station Hall, Railton Road, Herne Hill, London SE24 0JW",
   directionsUrl:
     "https://www.google.com/maps/dir/?api=1&destination=Station+Hall,+Railton+Road,+Herne+Hill,+London+SE24+0JW",
-  mapEmbedUrl:
-    "https://www.google.com/maps?q=Station+Hall,+Railton+Road,+Herne+Hill,+London+SE24+0JW&output=embed",
 } as const;

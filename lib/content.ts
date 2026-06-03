@@ -103,6 +103,12 @@ export const galleryStory = [
         alt: "Singer and house band together on stage",
         caption: "Singers and musicians.",
       },
+      {
+        src: "/gallery/SingerBass.png",
+        alt: "Local singer performing with the double bass player",
+        caption: "With the double bass.",
+        objectPosition: "top",
+      },
     ],
   },
   {
@@ -147,27 +153,15 @@ export const galleryStory = [
   {
     id: "the-community",
     label: "The Community",
-    tagline: "Friends, supporters, and fellow music lovers.",
+    tagline:
+      "Good company, candlelit tables, and a jazz club feel for the evening.",
     layout: "community",
-    images: communityPhotos.map(({ src, alt }) => ({
-      src,
-      alt,
-      caption: "Good company.",
-    })),
-  },
-  {
-    id: "herne-hill",
-    label: "Herne Hill",
-    tagline: "Born in Herne Hill and open to everyone.",
-    layout: "text",
-    images: [],
-  },
-  {
-    id: "the-room",
-    label: "The Room",
-    tagline: "Candles, tablecloths, and a jazz club feel for the evening.",
-    layout: "single",
     images: [
+      ...communityPhotos.map(({ src, alt }) => ({
+        src,
+        alt,
+        caption: "Good company.",
+      })),
       {
         src: "/gallery/FromAbove.jpg",
         alt: "Candlelit tables in a warmly lit room",

@@ -7,8 +7,6 @@ type StorySection = (typeof galleryStory)[number];
 type SingersSectionData = Extract<StorySection, { layout: "singers" }>;
 type CommunitySectionData = Extract<StorySection, { layout: "community" }>;
 type HouseBandSectionData = Extract<StorySection, { layout: "house-band" }>;
-type TextSectionData = Extract<StorySection, { layout: "text" }>;
-type SingleSectionData = Extract<StorySection, { layout: "single" }>;
 type StoryImage = {
   src: string;
   alt: string;
@@ -168,8 +166,7 @@ function CommunitySection({
   priority?: boolean;
   altBg?: boolean;
 }) {
-  const [featured, wide, ...rest] = section.images;
-  if (!featured) return null;
+  if (section.images.length === 0) return null;
 
   return (
     <section
@@ -178,16 +175,24 @@ function CommunitySection({
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeader label={section.label} tagline={section.tagline} />
-        <div className="mt-8 space-y-3 lg:mt-10">
-          <FeatureImage image={featured} priority={priority} aspect="wide" />
-          {wide && <FeatureImage image={wide} aspect="wide" />}
-          {rest.length > 0 && (
-            <div className="grid gap-4 sm:grid-cols-3">
-              {rest.map((image) => (
-                <FeatureImage key={image.src} image={image} aspect="wide" />
-              ))}
-            </div>
-          )}
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:gap-4">
+          {section.images.map((image, index) => (
+            <figure
+              key={image.src}
+              className="overflow-hidden rounded-sm border border-border bg-surface-elevated"
+            >
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  priority={priority && index === 0}
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                  className="object-cover object-center"
+                />
+              </div>
+            </figure>
+          ))}
         </div>
       </div>
     </section>
@@ -206,7 +211,7 @@ function HouseBandSection({
   const [featured, ...rest] = section.images;
   if (!featured) return null;
 
-  const wideImages = rest.slice(0, 1);
+  const groupPhotos = [featured, ...rest.slice(0, 1)];
   const portraits = rest.slice(1);
 
   return (
@@ -227,13 +232,28 @@ function HouseBandSection({
             </div>
           )}
         </div>
-        <div className="mt-8 space-y-3 lg:mt-10">
-          <FeatureImage image={featured} priority={priority} aspect="wide" />
-          {wideImages.map((image) => (
-            <FeatureImage key={image.src} image={image} aspect="wide" />
-          ))}
+        <div className="mt-8 lg:mt-10">
+          <div className="grid gap-3 sm:grid-cols-2 lg:gap-4">
+            {groupPhotos.map((image, index) => (
+              <figure
+                key={image.src}
+                className="overflow-hidden rounded-sm border border-border bg-surface-elevated"
+              >
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    priority={priority && index === 0}
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+              </figure>
+            ))}
+          </div>
           {portraits.length > 0 && (
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="mt-4 grid gap-4 sm:grid-cols-3">
               {portraits.map((image) => (
                 <div key={image.src}>
                   <FeatureImage
@@ -250,58 +270,6 @@ function HouseBandSection({
               ))}
             </div>
           )}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function TextSection({
-  section,
-  altBg,
-}: {
-  section: TextSectionData;
-  altBg?: boolean;
-}) {
-  return (
-    <section
-      id={section.id}
-      className={`scroll-mt-20 py-14 sm:py-20 ${altBg ? "bg-surface" : ""}`}
-    >
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <SectionHeader label={section.label} tagline={section.tagline} />
-        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-cream-muted sm:text-base">
-          A community jazz night rooted in Herne Hill — part of the
-          area&apos;s musical life, open to everyone whether you know the
-          performers or not.
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function SingleSection({
-  section,
-  altBg,
-}: {
-  section: SingleSectionData;
-  altBg?: boolean;
-}) {
-  return (
-    <section
-      id={section.id}
-      className={`scroll-mt-20 py-14 sm:py-20 ${altBg ? "bg-surface" : ""}`}
-    >
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <SectionHeader label={section.label} tagline={section.tagline} />
-        <div className="mt-8 space-y-3 lg:mt-10">
-          {section.images.map((image) => (
-            <FeatureImage
-              key={image.src}
-              image={image as StoryImage}
-              aspect="wide"
-            />
-          ))}
         </div>
       </div>
     </section>
@@ -373,14 +341,7 @@ export default function GalleryStory() {
             />
           );
         }
-        if (section.layout === "text") {
-          return (
-            <TextSection key={section.id} section={section} altBg={altBg} />
-          );
-        }
-        return (
-          <SingleSection key={section.id} section={section} altBg={altBg} />
-        );
+        return null;
       })}
 
       <section className="border-t border-border/40 bg-surface py-14 sm:py-20">

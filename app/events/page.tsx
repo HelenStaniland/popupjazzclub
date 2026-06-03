@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Button from "@/components/Button";
+import VenueDetails from "@/components/VenueDetails";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -11,7 +12,6 @@ const upcomingEvents = [
   {
     date: "Friday 11 September 2026",
     title: "Vocal Jazz Night",
-    venue: "Herne Hill",
     description:
       "An open, welcoming evening of vocal jazz — local singers, the house band, and a room full of encouragement. Bring a bottle and come along.",
     status: "On sale",
@@ -19,7 +19,6 @@ const upcomingEvents = [
   {
     date: "Saturday 10 October 2026",
     title: "Pop Up Jazz at the Herne Hill Music Festival",
-    venue: "Herne Hill",
     description:
       "Pop Up Jazz Club joins the Herne Hill Music Festival for an evening of live jazz, local voices and good company.",
     status: "On sale",
@@ -48,42 +47,44 @@ export default function EventsPage() {
             {upcomingEvents.map((event) => (
               <article
                 key={event.title}
-                className="group flex flex-col gap-6 rounded-sm border border-border bg-surface-elevated p-8 transition-colors hover:border-gold/30 sm:flex-row sm:items-center sm:justify-between"
+                className="rounded-sm border border-border bg-surface-elevated p-8 transition-colors hover:border-gold/30"
               >
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <time className="text-sm uppercase tracking-widest text-gold">
-                      {event.date}
-                    </time>
-                    <span
-                      className={`rounded-full px-3 py-0.5 text-xs uppercase tracking-wider ${
-                        event.status === "On sale"
-                          ? "bg-gold/15 text-gold"
-                          : "bg-cream-muted/10 text-cream-muted"
-                      }`}
-                    >
-                      {event.status}
-                    </span>
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <time className="text-sm uppercase tracking-widest text-gold">
+                        {event.date}
+                      </time>
+                      <span
+                        className={`rounded-full px-3 py-0.5 text-xs uppercase tracking-wider ${
+                          event.status === "On sale"
+                            ? "bg-gold/15 text-gold"
+                            : "bg-cream-muted/10 text-cream-muted"
+                        }`}
+                      >
+                        {event.status}
+                      </span>
+                    </div>
+                    <h2 className="mt-3 font-serif text-2xl font-light text-cream">
+                      {event.title}
+                    </h2>
+                    <p className="mt-3 max-w-xl text-sm leading-relaxed text-cream-muted">
+                      {event.description}
+                    </p>
                   </div>
-                  <h2 className="mt-3 font-serif text-2xl font-light text-cream">
-                    {event.title}
-                  </h2>
-                  <p className="mt-1 text-sm text-gold-light">{event.venue}</p>
-                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-cream-muted">
-                    {event.description}
-                  </p>
+                  <div className="shrink-0">
+                    {event.status === "On sale" ? (
+                      <Button href="mailto:hello@popupjazzclub.com?subject=Ticket%20enquiry">
+                        Book Tickets
+                      </Button>
+                    ) : (
+                      <Button href="/join" variant="outline">
+                        Join the Club
+                      </Button>
+                    )}
+                  </div>
                 </div>
-                <div className="shrink-0">
-                  {event.status === "On sale" ? (
-                    <Button href="mailto:hello@popupjazzclub.com?subject=Ticket%20enquiry">
-                      Book Tickets
-                    </Button>
-                  ) : (
-                    <Button href="/join" variant="outline">
-                      Join the Club
-                    </Button>
-                  )}
-                </div>
+                <VenueDetails />
               </article>
             ))}
           </div>

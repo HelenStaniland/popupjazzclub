@@ -33,6 +33,23 @@ export default function JoinPage() {
         <div className="mx-auto max-w-xl px-6 lg:px-8">
           <JoinForm />
 
+          <div className="mt-16">
+            <h2 className="text-center font-serif text-2xl font-light text-cream">
+              Questions
+            </h2>
+            <dl className="mt-8 space-y-8">
+              <div>
+                <dt className="text-xs uppercase tracking-[0.2em] text-gold">
+                  Where does Pop Up Jazz Club take place?
+                </dt>
+                <dd className="mt-3 text-sm leading-relaxed text-cream-muted">
+                  We meet at Station Hall in Herne Hill, a short walk from Herne
+                  Hill station. Full venue details are included with each event.
+                </dd>
+              </div>
+            </dl>
+          </div>
+
           <div className="mt-16 text-center">
             <h2 className="font-serif text-2xl font-light text-cream">
               What you&apos;ll hear about

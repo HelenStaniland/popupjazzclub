@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navLinks } from "@/lib/content";
+import { popUpJazzClubVenue } from "@/lib/venue";
 
 export default function Footer() {
   return (
@@ -11,6 +12,17 @@ export default function Footer() {
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream-muted">
               A community jazz night in Herne Hill — local singers, live music,
               and good company. Bring your own bottle.
+            </p>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream-muted">
+              Pop Up Jazz Club takes place at {popUpJazzClubVenue.title}.{" "}
+              <a
+                href={popUpJazzClubVenue.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold transition-colors hover:text-gold-light"
+              >
+                Directions
+              </a>
             </p>
           </div>
 

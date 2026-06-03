@@ -4,11 +4,38 @@ import Button from "@/components/Button";
 import { galleryStory } from "@/lib/content";
 
 type StorySection = (typeof galleryStory)[number];
+type SingersSectionData = Extract<StorySection, { layout: "singers" }>;
+type CommunitySectionData = Extract<StorySection, { layout: "community" }>;
+type HouseBandSectionData = Extract<StorySection, { layout: "house-band" }>;
+type TextSectionData = Extract<StorySection, { layout: "text" }>;
+type SingleSectionData = Extract<StorySection, { layout: "single" }>;
 type StoryImage = {
   src: string;
   alt: string;
   caption: string;
+  credit?: string;
+  fit?: "cover" | "contain";
+  objectPosition?: "center" | "top" | string;
 };
+
+function imageObjectFit(
+  fit: "cover" | "contain",
+  position: string
+): { className: string; style?: { objectPosition: string } } {
+  if (fit === "contain") {
+    return { className: "object-contain object-center" };
+  }
+  if (position === "top") {
+    return { className: "object-cover object-top" };
+  }
+  if (position === "center") {
+    return { className: "object-cover object-center" };
+  }
+  return {
+    className: "object-cover",
+    style: { objectPosition: position },
+  };
+}
 
 function FeatureImage({
   image,
@@ -16,15 +43,19 @@ function FeatureImage({
   className = "",
   aspect = "wide",
   objectPosition = "center",
+  fit = "cover",
   sizes,
 }: {
   image: StoryImage;
   priority?: boolean;
   className?: string;
   aspect?: "wide" | "tall";
-  objectPosition?: "center" | "top";
+  objectPosition?: "center" | "top" | string;
+  fit?: "cover" | "contain";
   sizes?: string;
 }) {
+  const imageFit = image.fit ?? fit;
+  const imagePosition = image.objectPosition ?? objectPosition;
   const aspectClass =
     aspect === "tall" ? "aspect-[3/4]" : "aspect-[16/10] sm:aspect-[16/9]";
   const imageSizes =
@@ -32,8 +63,10 @@ function FeatureImage({
     (aspect === "tall"
       ? "(max-width: 640px) 100vw, 33vw"
       : "(max-width: 1024px) 100vw, 1152px");
-  const objectClass =
-    objectPosition === "top" ? "object-cover object-top" : "object-cover";
+  const { className: objectClass, style: objectStyle } = imageObjectFit(
+    imageFit,
+    imagePosition
+  );
 
   return (
     <figure className={className}>
@@ -47,9 +80,9 @@ function FeatureImage({
           priority={priority}
           sizes={imageSizes}
           className={objectClass}
+          style={objectStyle}
         />
       </div>
-      <figcaption className="mt-4 text-sm text-cream-muted">{image.caption}</figcaption>
     </figure>
   );
 }
@@ -58,7 +91,7 @@ function SectionHeader({ label, tagline }: { label: string; tagline: string }) {
   return (
     <div className="max-w-xl">
       <p className="text-xs uppercase tracking-[0.3em] text-gold">{label}</p>
-      <p className="mt-4 font-serif text-2xl font-light leading-snug text-cream sm:text-3xl">
+      <p className="mt-3 font-serif text-2xl font-light leading-snug text-cream sm:text-3xl">
         {tagline}
       </p>
     </div>
@@ -70,28 +103,27 @@ function SingersSection({
   priority,
   altBg,
 }: {
-  section: StorySection;
+  section: SingersSectionData;
   priority?: boolean;
   altBg?: boolean;
 }) {
-  const [featured, ...portraits] = section.images;
-  if (!featured) return null;
-
+  const portraits = section.images;
   const wideImages =
     "wideImages" in section && section.wideImages ? section.wideImages : [];
+
+  if (portraits.length === 0 && wideImages.length === 0) return null;
 
   return (
     <section
       id={section.id}
-      className={`scroll-mt-24 py-24 sm:py-32 lg:py-36 ${altBg ? "bg-surface" : ""}`}
+      className={`scroll-mt-20 py-14 sm:py-20 ${altBg ? "bg-surface" : ""}`}
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeader label={section.label} tagline={section.tagline} />
-        <div className="mt-12 lg:mt-16">
-          <FeatureImage image={featured} priority={priority} aspect="wide" />
+        <div className="mt-8 lg:mt-10">
           {portraits.length > 0 && (
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-              {portraits.map((image) => (
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+              {portraits.map((image, index) => (
                 <figure
                   key={image.src}
                   className="overflow-hidden rounded-sm border border-border"
@@ -101,21 +133,23 @@ function SingersSection({
                       src={image.src}
                       alt={image.alt}
                       fill
+                      priority={priority && index === 0}
                       sizes="(max-width: 640px) 50vw, 25vw"
-                      className="object-cover"
+                      {...imageObjectFit("cover", image.objectPosition ?? "center")}
                     />
                   </div>
-                  <figcaption className="mt-2 text-xs text-cream-muted">
-                    {image.caption}
-                  </figcaption>
                 </figure>
               ))}
             </div>
           )}
           {wideImages.length > 0 && (
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {wideImages.map((image) => (
-                <FeatureImage key={image.src} image={image} aspect="wide" />
+                <FeatureImage
+                  key={image.src}
+                  image={image as StoryImage}
+                  aspect="wide"
+                />
               ))}
             </div>
           )}
@@ -130,7 +164,7 @@ function CommunitySection({
   priority,
   altBg,
 }: {
-  section: StorySection;
+  section: CommunitySectionData;
   priority?: boolean;
   altBg?: boolean;
 }) {
@@ -140,11 +174,11 @@ function CommunitySection({
   return (
     <section
       id={section.id}
-      className={`scroll-mt-24 py-24 sm:py-32 lg:py-36 ${altBg ? "bg-surface" : ""}`}
+      className={`scroll-mt-20 py-14 sm:py-20 ${altBg ? "bg-surface" : ""}`}
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeader label={section.label} tagline={section.tagline} />
-        <div className="mt-12 space-y-4 lg:mt-16">
+        <div className="mt-8 space-y-3 lg:mt-10">
           <FeatureImage image={featured} priority={priority} aspect="wide" />
           {wide && <FeatureImage image={wide} aspect="wide" />}
           {rest.length > 0 && (
@@ -165,7 +199,7 @@ function HouseBandSection({
   priority,
   altBg,
 }: {
-  section: StorySection;
+  section: HouseBandSectionData;
   priority?: boolean;
   altBg?: boolean;
 }) {
@@ -178,11 +212,22 @@ function HouseBandSection({
   return (
     <section
       id={section.id}
-      className={`scroll-mt-24 py-24 sm:py-32 lg:py-36 ${altBg ? "bg-surface" : ""}`}
+      className={`scroll-mt-20 py-14 sm:py-20 ${altBg ? "bg-surface" : ""}`}
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <SectionHeader label={section.label} tagline={section.tagline} />
-        <div className="mt-12 space-y-4 lg:mt-16">
+        <div className="max-w-2xl">
+          <h2 className="font-serif text-2xl font-light text-cream sm:text-3xl">
+            {section.label}
+          </h2>
+          {"body" in section && section.body && (
+            <div className="mt-5 space-y-3 text-sm leading-relaxed text-cream-muted sm:text-base">
+              {section.body.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="mt-8 space-y-3 lg:mt-10">
           <FeatureImage image={featured} priority={priority} aspect="wide" />
           {wideImages.map((image) => (
             <FeatureImage key={image.src} image={image} aspect="wide" />
@@ -190,12 +235,18 @@ function HouseBandSection({
           {portraits.length > 0 && (
             <div className="grid gap-4 sm:grid-cols-3">
               {portraits.map((image) => (
-                <FeatureImage
-                  key={image.src}
-                  image={image}
-                  aspect="tall"
-                  objectPosition="top"
-                />
+                <div key={image.src}>
+                  <FeatureImage
+                    image={image}
+                    aspect="tall"
+                    objectPosition="top"
+                  />
+                  {"credit" in image && image.credit && (
+                    <p className="mt-3 text-center text-sm text-cream-muted">
+                      {image.credit}
+                    </p>
+                  )}
+                </div>
               ))}
             </div>
           )}
@@ -209,17 +260,17 @@ function TextSection({
   section,
   altBg,
 }: {
-  section: StorySection;
+  section: TextSectionData;
   altBg?: boolean;
 }) {
   return (
     <section
       id={section.id}
-      className={`scroll-mt-24 py-24 sm:py-32 ${altBg ? "bg-surface" : ""}`}
+      className={`scroll-mt-20 py-14 sm:py-20 ${altBg ? "bg-surface" : ""}`}
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeader label={section.label} tagline={section.tagline} />
-        <p className="mt-8 max-w-2xl text-sm leading-relaxed text-cream-muted sm:text-base">
+        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-cream-muted sm:text-base">
           A community jazz night rooted in Herne Hill — part of the
           area&apos;s musical life, open to everyone whether you know the
           performers or not.
@@ -233,21 +284,23 @@ function SingleSection({
   section,
   altBg,
 }: {
-  section: StorySection;
+  section: SingleSectionData;
   altBg?: boolean;
 }) {
-  if (section.images.length === 0) return null;
-
   return (
     <section
       id={section.id}
-      className={`scroll-mt-24 py-24 sm:py-32 lg:py-36 ${altBg ? "bg-surface" : ""}`}
+      className={`scroll-mt-20 py-14 sm:py-20 ${altBg ? "bg-surface" : ""}`}
     >
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeader label={section.label} tagline={section.tagline} />
-        <div className="mt-12 space-y-4 lg:mt-16">
+        <div className="mt-8 space-y-3 lg:mt-10">
           {section.images.map((image) => (
-            <FeatureImage key={image.src} image={image} aspect="wide" />
+            <FeatureImage
+              key={image.src}
+              image={image as StoryImage}
+              aspect="wide"
+            />
           ))}
         </div>
       </div>
@@ -258,23 +311,23 @@ function SingleSection({
 export default function GalleryStory() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-border/40 bg-surface py-20 sm:py-28 lg:py-32">
+      <section className="relative overflow-hidden border-b border-border/40 bg-surface py-12 sm:py-16 lg:py-20">
         <div
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--glow-gallery)_0%,transparent_60%)]"
           aria-hidden
         />
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-gold">Gallery</p>
-          <h1 className="mt-5 max-w-2xl font-serif text-4xl font-light leading-tight text-cream sm:text-5xl">
-            People, music &amp; good evenings
+          <h1 className="mt-4 max-w-2xl font-serif text-4xl font-light leading-tight text-cream sm:text-5xl">
+            Moments from Pop Up Jazz Club
           </h1>
-          <p className="mt-6 max-w-md text-cream-muted">
-            Photos from Pop Up Jazz Club in Herne Hill.
+          <p className="mt-4 max-w-md text-cream-muted">
+            Live jazz, local voices and good company in Herne Hill.
           </p>
 
           <nav
             aria-label="Gallery sections"
-            className="mt-10 flex flex-wrap gap-x-8 gap-y-3"
+            className="mt-8 flex flex-wrap gap-x-8 gap-y-3"
           >
             {galleryStory.map(({ id, label }) => (
               <a
@@ -330,7 +383,7 @@ export default function GalleryStory() {
         );
       })}
 
-      <section className="border-t border-border/40 bg-surface py-24 sm:py-32">
+      <section className="border-t border-border/40 bg-surface py-14 sm:py-20">
         <div className="mx-auto max-w-6xl px-6 text-center lg:px-8">
           <p className="font-serif text-2xl font-light text-cream sm:text-3xl">
             Fancy coming along?
@@ -338,7 +391,7 @@ export default function GalleryStory() {
           <p className="mx-auto mt-4 max-w-sm text-sm text-cream-muted">
             Live jazz, local voices, and a room full of friends.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/events">See upcoming events</Button>
             <Link
               href="/join"

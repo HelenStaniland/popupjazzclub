@@ -5,7 +5,13 @@ export const navLinks = [
   { href: "/join", label: "Join the Club" },
 ] as const;
 
-export const singerPhotos = [
+type SingerPhoto = {
+  src: string;
+  alt: string;
+  objectPosition?: string;
+};
+
+export const singerPhotos: SingerPhoto[] = [
   {
     src: "/gallery/Singer1.jpg",
     alt: "Local singer performing with the house band",
@@ -27,14 +33,20 @@ export const singerPhotos = [
     alt: "Local singer performing on stage",
   },
   {
-    src: "/gallery/Singer7.jpg",
+    src: "/gallery/Singer7.png",
     alt: "Local singer performing with the house band",
+    objectPosition: "top",
+  },
+  {
+    src: "/gallery/Duet.jpg",
+    alt: "Two local singers performing a duet on stage",
+    objectPosition: "top",
   },
   {
     src: "/gallery/Singer9.png",
     alt: "Local singer performing on stage",
   },
-] as const;
+];
 
 export const communityPhotos = [
   {
@@ -60,7 +72,6 @@ export const galleryImages = [
   { src: "/gallery/Duet.jpg", alt: "Two local singers performing a duet", caption: "Duet" },
   { src: "/gallery/AfterParty.jpg", alt: "Friends chatting after the performance", caption: "Good company" },
   { src: "/gallery/WholeAudience.jpg", alt: "Everyone together in the room", caption: "Everyone together" },
-  { src: "/gallery/CurtainCall.jpg", alt: "Singers and musicians at curtain call", caption: "Curtain call" },
 ] as const;
 
 export const galleryStory = [
@@ -69,18 +80,12 @@ export const galleryStory = [
     label: "The Music",
     tagline: "Local singers, supported by a live band.",
     layout: "singers",
-    images: [
-      {
-        src: "/gallery/SingerDrummer.png",
-        alt: "Local singer performing with the drummer",
-        caption: "Live on stage.",
-      },
-      ...singerPhotos.map(({ src, alt }) => ({
-        src,
-        alt,
-        caption: "Local voices.",
-      })),
-    ],
+    images: singerPhotos.map(({ src, alt, objectPosition }) => ({
+      src,
+      alt,
+      caption: "Local voices.",
+      ...(objectPosition ? { objectPosition } : {}),
+    })),
     wideImages: [
       {
         src: "/gallery/SingerWithBand.png",
@@ -88,26 +93,25 @@ export const galleryStory = [
         caption: "With the house band.",
       },
       {
-        src: "/gallery/Duet.jpg",
-        alt: "Two local singers performing a duet on stage",
-        caption: "Duets and collaborations.",
+        src: "/gallery/SingerDrummer.png",
+        alt: "Local singer performing with the drummer",
+        caption: "Live on stage.",
+        objectPosition: "center 26%",
       },
       {
         src: "/gallery/SingerBandInteraction.png",
         alt: "Singer and house band together on stage",
         caption: "Singers and musicians.",
       },
-      {
-        src: "/gallery/CurtainCall.jpg",
-        alt: "Singers and musicians taking a curtain call",
-        caption: "End of the night.",
-      },
     ],
   },
   {
     id: "the-house-band",
     label: "The House Band",
-    tagline: "The same musicians backing every singer through the evening.",
+    body: [
+      "Pop Up Jazz Club started with three friends who wanted an excuse to make music together. What began as a small gathering of singers and musicians has grown into a welcoming evening where local people can perform with the support of a live band.",
+      "Helen Staniland (double bass and vocals), Paul Southern (keyboards) and Vincent Burke (drums) accompany every singer throughout the evening, helping create a relaxed and supportive atmosphere on stage.",
+    ],
     layout: "house-band",
     images: [
       {
@@ -124,16 +128,19 @@ export const galleryStory = [
         src: "/gallery/Keyboards.jpg",
         alt: "Pianist with the house band",
         caption: "Piano.",
+        credit: "Keyboards - Paul Southern",
       },
       {
         src: "/gallery/Drummer.png",
         alt: "Drummer with the house band",
         caption: "Drums.",
+        credit: "Drums - Vincent Burke",
       },
       {
         src: "/gallery/Bass.jpg",
         alt: "Double bass player with the house band",
         caption: "Double bass.",
+        credit: "Double Bass - Helen Staniland",
       },
     ],
   },

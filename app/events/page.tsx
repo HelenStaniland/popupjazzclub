@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const upcomingEvents = [
   {
     date: "Friday 11 September 2026",
-    title: "Vocal Jazz Jam",
+    title: "Vocal Jazz Night",
     venue: "Herne Hill",
     description:
       "An open, welcoming evening of vocal jazz — local singers, the house band, and a room full of encouragement. Bring a bottle and come along.",

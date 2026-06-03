@@ -9,24 +9,26 @@ export default function HomeWhatIs() {
         </h2>
         <div className="mt-6 max-w-2xl space-y-4 text-sm leading-relaxed text-cream-muted sm:text-base">
           <p>
-            Pop Up Jazz Club is a community jazz night in Herne Hill where local
-            people come together to sing, play, listen and spend an evening in
-            good company.
+            Pop Up Jazz Club is a community jazz night in Herne Hill — part
+            performance, part gathering. Local people come together to sing,
+            listen, and spend an evening in good company.
           </p>
           <p>
             What began as a small gathering of friends from local choirs and
-            music groups has grown into a welcoming regular event. Some people
-            come to perform, others come to support friends, and many simply
-            come to enjoy live music in a relaxed atmosphere.
+            music groups has grown into a regular event where people feel at
+            home. Some come to perform, others to support friends, and many
+            simply come to enjoy live music and a relaxed evening among people
+            they like.
           </p>
           <p>
-            With candlelit tables, a live house band and a bring-your-own-bottle
-            approach, the evening combines the feel of a jazz club with the
-            warmth of a community gathering.
+            The room is candlelit and bring-your-own-bottle; wine glasses and ice
+            are on the tables, with a few snacks while you settle in. A live house
+            band carries the music. The evening feels somewhere between a jazz
+            club, a party, and a live music night with friends.
           </p>
           <p>
-            Bring a bottle, settle in with friends, and enjoy an evening of live
-            jazz, local voices and community.
+            Bring a bottle, settle in at a candlelit table with friends, and
+            enjoy an evening of live jazz, local voices and community.
           </p>
         </div>
 

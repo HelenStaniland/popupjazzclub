@@ -8,7 +8,7 @@ export default function HomeInterestedInSinging() {
         <div className="mt-6 max-w-2xl space-y-4 text-sm leading-relaxed text-cream-muted sm:text-base">
           <p>
             Pop Up Jazz Club isn&apos;t an open mic night or a traditional jazz
-            jam. Our singers are usually people who have become part of the club
+            jam. Our singers are people who have become part of the club
             over time through local choirs, music groups and friendships.
           </p>
           <p>

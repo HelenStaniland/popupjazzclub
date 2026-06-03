@@ -15,14 +15,25 @@ function FeatureImage({
   priority = false,
   className = "",
   aspect = "wide",
+  objectPosition = "center",
+  sizes,
 }: {
   image: StoryImage;
   priority?: boolean;
   className?: string;
   aspect?: "wide" | "tall";
+  objectPosition?: "center" | "top";
+  sizes?: string;
 }) {
   const aspectClass =
     aspect === "tall" ? "aspect-[3/4]" : "aspect-[16/10] sm:aspect-[16/9]";
+  const imageSizes =
+    sizes ??
+    (aspect === "tall"
+      ? "(max-width: 640px) 100vw, 33vw"
+      : "(max-width: 1024px) 100vw, 1152px");
+  const objectClass =
+    objectPosition === "top" ? "object-cover object-top" : "object-cover";
 
   return (
     <figure className={className}>
@@ -34,8 +45,8 @@ function FeatureImage({
           alt={image.alt}
           fill
           priority={priority}
-          sizes="(max-width: 1024px) 100vw, 1152px"
-          className="object-cover"
+          sizes={imageSizes}
+          className={objectClass}
         />
       </div>
       <figcaption className="mt-4 text-sm text-cream-muted">{image.caption}</figcaption>
@@ -161,6 +172,9 @@ function HouseBandSection({
   const [featured, ...rest] = section.images;
   if (!featured) return null;
 
+  const wideImages = rest.slice(0, 1);
+  const portraits = rest.slice(1);
+
   return (
     <section
       id={section.id}
@@ -170,9 +184,21 @@ function HouseBandSection({
         <SectionHeader label={section.label} tagline={section.tagline} />
         <div className="mt-12 space-y-4 lg:mt-16">
           <FeatureImage image={featured} priority={priority} aspect="wide" />
-          {rest.map((image) => (
+          {wideImages.map((image) => (
             <FeatureImage key={image.src} image={image} aspect="wide" />
           ))}
+          {portraits.length > 0 && (
+            <div className="grid gap-4 sm:grid-cols-3">
+              {portraits.map((image) => (
+                <FeatureImage
+                  key={image.src}
+                  image={image}
+                  aspect="tall"
+                  objectPosition="top"
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

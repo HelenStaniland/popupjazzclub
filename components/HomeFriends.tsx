@@ -30,8 +30,8 @@ export default function HomeFriends() {
                 others to have a go.
               </p>
               <p>
-                Every evening brings a mixture of familiar faces, new voices and
-                memorable moments.
+                Every evening brings familiar faces around candlelit tables, new
+                voices on stage, and the easy pleasure of spending time together.
               </p>
             </div>
           </div>

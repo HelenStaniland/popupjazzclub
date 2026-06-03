@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 
 export default function HomeJoinUs() {
   return (
-    <section className="border-t border-border/40 bg-surface py-24 sm:py-32">
+    <section className="border-t border-border/40 bg-surface pt-6 pb-14 sm:pt-8 sm:pb-20">
       <div className="mx-auto max-w-6xl px-6 text-center lg:px-8">
         <p className="text-xs uppercase tracking-[0.3em] text-gold">Join Us</p>
         <p className="mx-auto mt-4 max-w-md font-serif text-2xl font-light text-cream sm:text-3xl">

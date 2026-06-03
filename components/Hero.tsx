@@ -8,7 +8,7 @@ export default function Hero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 py-16 sm:py-20 lg:px-8 lg:py-24">
+      <div className="relative mx-auto max-w-6xl px-6 py-12 sm:py-16 lg:px-8 lg:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gold">

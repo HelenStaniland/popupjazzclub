@@ -4,6 +4,7 @@ import HomeWhatIs from "@/components/HomeWhatIs";
 import HomeLocalVoices from "@/components/HomeLocalVoices";
 import HomeFriends from "@/components/HomeFriends";
 import HomeHouseBand from "@/components/HomeHouseBand";
+import HomeInterestedInSinging from "@/components/HomeInterestedInSinging";
 import HomeJoinUs from "@/components/HomeJoinUs";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <HomeLocalVoices />
       <HomeFriends />
       <HomeHouseBand />
+      <HomeInterestedInSinging />
       <HomeJoinUs />
     </>
   );

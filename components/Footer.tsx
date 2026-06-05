@@ -10,8 +10,7 @@ export default function Footer() {
           <div>
             <p className="font-serif text-xl text-cream">Pop Up Jazz Club</p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream-muted">
-              A community jazz night in Herne Hill — local singers, live music,
-              and good company. Bring your own bottle.
+              Live jazz, local voices and great company.
             </p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream-muted">
               Pop Up Jazz Club takes place at {popUpJazzClubVenue.title}.{" "}

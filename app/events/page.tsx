@@ -13,7 +13,7 @@ const upcomingEvents = [
     date: "Friday 11 September 2026",
     title: "Vocal Jazz Night",
     description:
-      "An open, welcoming evening of vocal jazz — local singers, the house band, and a room full of encouragement. Bring a bottle and come along.",
+      "An open, welcoming evening of vocal jazz — local singers, the house band, candlelit tables and a room full of encouragement. Bring a bottle and come along.",
     status: "On sale",
   },
   {
@@ -83,6 +83,16 @@ export default function EventsPage() {
                       </Button>
                     )}
                   </div>
+                </div>
+                <div className="mt-6 border-t border-border/40 pt-6">
+                  <p className="text-xs uppercase tracking-[0.3em] text-gold">
+                    Tickets
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-cream-muted">
+                    Advance tickets: £8
+                    <br />
+                    £10 on the door (subject to availability)
+                  </p>
                 </div>
                 <VenueDetails />
               </article>

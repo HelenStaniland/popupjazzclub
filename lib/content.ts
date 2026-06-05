@@ -115,8 +115,8 @@ export const galleryStory = [
     id: "the-house-band",
     label: "The House Band",
     body: [
-      "Pop Up Jazz Club started with three friends who wanted an excuse to make music together. What began as a small gathering of singers and musicians has grown into a welcoming evening where local people can perform with the support of a live band.",
-      "Helen Staniland (double bass and vocals), Paul Southern (keyboards) and Vincent Burke (drums) accompany every singer throughout the evening, helping create a relaxed and supportive atmosphere on stage.",
+      "Pop Up Jazz Club started with three friends who wanted an excuse to play music together.",
+      "Helen Staniland (double bass and vocals), Paul Southern (keyboards) and Vincent Burke (drums) accompany every performance, helping singers feel comfortable and confident on stage.",
     ],
     layout: "house-band",
     images: [

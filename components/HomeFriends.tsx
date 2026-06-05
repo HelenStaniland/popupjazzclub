@@ -14,24 +14,23 @@ export default function HomeFriends() {
             </h2>
             <div className="mt-6 max-w-2xl space-y-4 text-sm leading-relaxed text-cream-muted sm:text-base">
               <p>
-                Many of our singers come from local choirs and music groups, and
-                for some, Pop Up Jazz Club is their first experience of singing
-                solo.
+                Many of our singers know each other through local choirs and
+                friendships, and for some, Pop Up Jazz Club has been their first
+                experience of singing solo.
               </p>
               <p>
                 What makes the evening special is the encouragement people give
                 one another. Friends come to cheer each other on, performers
-                support new singers, and audience members often become performers
-                themselves.
+                support new singers, and confidence grows with every event.
               </p>
               <p>
-                Over time, the confidence grows. People who were nervous about
-                stepping onto the stage have returned to sing again, inspiring
-                others to have a go.
+                People who were nervous about singing solo have returned to
+                perform again, inspiring others to have a go.
               </p>
               <p>
-                Every evening brings familiar faces around candlelit tables, new
-                voices on stage, and the easy pleasure of spending time together.
+                Each event brings familiar faces around candlelit tables, new
+                voices on stage, and the simple pleasure of spending time
+                together.
               </p>
             </div>
           </div>

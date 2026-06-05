@@ -9,26 +9,25 @@ export default function HomeWhatIs() {
         </h2>
         <div className="mt-6 max-w-2xl space-y-4 text-sm leading-relaxed text-cream-muted sm:text-base">
           <p>
-            Pop Up Jazz Club is a community jazz night in Herne Hill — part
+            Pop Up Jazz Club is a vocal jazz night in Herne Hill — part
             performance, part gathering. Local people come together to sing,
             listen, and spend an evening in good company.
           </p>
           <p>
-            What began as a small gathering of friends from local choirs and
-            music groups has grown into a regular event where people feel at
-            home. Some come to perform, others to support friends, and many
-            simply come to enjoy live music and a relaxed evening among people
-            they like.
+            What began as a small gathering of friends has grown into a regular
+            event where people feel at home. Some come to perform, others to
+            support friends, and many simply come to enjoy live music and a
+            relaxed evening among people they like.
           </p>
           <p>
             The room is candlelit and bring-your-own-bottle; wine glasses and ice
             are on the tables, with a few snacks while you settle in. A live house
             band carries the music. The evening feels somewhere between a jazz
-            club, a party, and a live music night with friends.
+            club and a live music night among friends.
           </p>
           <p>
-            Bring a bottle, settle in at a candlelit table with friends, and
-            enjoy an evening of live jazz, local voices and community.
+            Bring a bottle, settle in at a candlelit table, and enjoy an evening
+            of live jazz, local voices and community.
           </p>
         </div>
 

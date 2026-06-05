@@ -25,13 +25,13 @@ export default function HomeLocalVoices() {
         </h2>
         <div className="mt-6 max-w-2xl space-y-4 text-sm leading-relaxed text-cream-muted sm:text-base">
           <p>
-            Each night features singers from the Herne Hill community — often
-            from local choirs — performing jazz standards, favourites, and the
-            occasional surprise.
+            Each night features singers from the Herne Hill community performing
+            jazz standards, favourites, and the occasional surprise.
           </p>
           <p>
-            Duets, solo spots, and variety from night to night. Neighbours
-            sharing music they love, supported by a live band.
+            Every event brings a different mix of voices, songs and
+            personalities. Familiar faces, new favourites, and people sharing
+            music they love, supported by a live band.
           </p>
         </div>
 

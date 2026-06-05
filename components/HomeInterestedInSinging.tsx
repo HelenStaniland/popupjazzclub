@@ -8,18 +8,19 @@ export default function HomeInterestedInSinging() {
         <div className="mt-6 max-w-2xl space-y-4 text-sm leading-relaxed text-cream-muted sm:text-base">
           <p>
             Pop Up Jazz Club isn&apos;t an open mic night or a traditional jazz
-            jam. Our singers are people who have become part of the club
-            over time through local choirs, music groups and friendships.
+            jam session. Most of our singers know each other through local
+            choirs and friendships, and many have been part of the club from the
+            very beginning.
           </p>
           <p>
-            If you&apos;d like to sing, we&apos;d love to hear from you. Many of
-            our current performers started out in the audience, getting to know
-            the music, the atmosphere and the community before stepping onto the
-            stage themselves.
+            The line-up grows gradually as new people become part of the
+            community. If you&apos;re interested in singing, come along and get
+            to know us. We&apos;d love to meet you.
           </p>
           <p>
-            The best way to get involved is to come along, enjoy an evening with
-            us, and introduce yourself. We&apos;d love to meet you.
+            Many of the people who now sing at Pop Up Jazz Club started out in
+            the audience, enjoying the music and supporting friends before
+            stepping onto the stage themselves.
           </p>
         </div>
       </div>

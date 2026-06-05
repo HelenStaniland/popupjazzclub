@@ -18,7 +18,7 @@ export default function Hero() {
               Live jazz, local voices and great company.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-cream-muted">
-              A community vocal jazz night where ordinary people find
+              A community vocal jazz night where ordinary people have found
               the confidence to step onto the stage.
             </p>
           </div>

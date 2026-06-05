@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HomeFriends() {
   return (
-    <section className="py-14 sm:py-20">
+    <section className="pt-6 pb-6 sm:pt-8 sm:pb-8">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           <div>

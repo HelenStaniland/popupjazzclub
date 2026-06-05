@@ -1,6 +1,6 @@
 export default function HomeInterestedInSinging() {
   return (
-    <section className="py-14 sm:py-20">
+    <section className="pt-6 pb-6 sm:pt-8 sm:pb-8">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <h2 className="max-w-2xl font-serif text-2xl font-light text-cream sm:text-3xl">
           Interested in Singing?

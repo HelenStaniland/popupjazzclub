@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HomeHouseBand() {
   return (
-    <section className="bg-surface pt-14 pb-6 sm:pt-20 sm:pb-8">
+    <section className="bg-surface pt-6 pb-6 sm:pt-8 sm:pb-8">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <h2 className="max-w-2xl font-serif text-2xl font-light text-cream sm:text-3xl">
           The House Band

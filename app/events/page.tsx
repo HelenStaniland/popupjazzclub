@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Button from "@/components/Button";
 import VenueDetails from "@/components/VenueDetails";
+
+// Temporary — set to true when ticket booking is live
+const TICKETS_ON_SALE = false;
 
 export const metadata: Metadata = {
   title: "Events",
@@ -43,6 +47,18 @@ export default function EventsPage() {
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          {!TICKETS_ON_SALE && (
+            <p className="mb-8 max-w-2xl text-sm leading-relaxed text-cream-muted">
+              Tickets will be available here soon.{" "}
+              <Link
+                href="/join"
+                className="text-gold transition-colors hover:text-gold-light"
+              >
+                Join the Club
+              </Link>{" "}
+              to hear when booking opens.
+            </p>
+          )}
           <div className="space-y-6">
             {upcomingEvents.map((event) => (
               <article
@@ -57,12 +73,12 @@ export default function EventsPage() {
                       </time>
                       <span
                         className={`rounded-full px-3 py-0.5 text-xs uppercase tracking-wider ${
-                          event.status === "On sale"
+                          TICKETS_ON_SALE && event.status === "On sale"
                             ? "bg-gold/15 text-gold"
                             : "bg-cream-muted/10 text-cream-muted"
                         }`}
                       >
-                        {event.status}
+                        {TICKETS_ON_SALE ? event.status : "Upcoming"}
                       </span>
                     </div>
                     <h2 className="mt-3 font-serif text-2xl font-light text-cream">
@@ -73,14 +89,21 @@ export default function EventsPage() {
                     </p>
                   </div>
                   <div className="shrink-0">
-                    {event.status === "On sale" ? (
+                    {TICKETS_ON_SALE && event.status === "On sale" ? (
                       <Button href="mailto:hello@popupjazzclub.com?subject=Ticket%20enquiry">
                         Book Tickets
                       </Button>
-                    ) : (
+                    ) : TICKETS_ON_SALE ? (
                       <Button href="/join" variant="outline">
                         Join the Club
                       </Button>
+                    ) : (
+                      <span
+                        aria-disabled="true"
+                        className="inline-flex cursor-not-allowed items-center justify-center rounded-sm border border-border bg-surface px-7 py-3.5 text-sm font-medium tracking-wide uppercase text-cream-muted/70"
+                      >
+                        Tickets not yet on sale
+                      </span>
                     )}
                   </div>
                 </div>

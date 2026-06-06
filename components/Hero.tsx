@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gold">
-              Pop Up Jazz Club · Herne Hill
+              Pop Up Jazz Club · Herne Hill, South London
             </p>
             <h1 className="mt-5 font-serif text-4xl font-light leading-tight text-cream sm:text-5xl lg:text-6xl">
               Live jazz, local voices and great company.

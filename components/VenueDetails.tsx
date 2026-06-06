@@ -1,18 +1,13 @@
 import { popUpJazzClubVenue } from "@/lib/venue";
 
 export default function VenueDetails() {
-  const { title, addressLines, directionsUrl } = popUpJazzClubVenue;
+  const { addressLines, directionsUrl } = popUpJazzClubVenue;
 
   return (
     <div className="border-t border-border/40 pt-6">
       <p className="text-xs uppercase tracking-[0.3em] text-gold">Venue</p>
-      <h3 className="mt-3 font-serif text-xl font-light text-cream">{title}</h3>
-      <address className="mt-3 space-y-0.5 text-sm not-italic leading-relaxed text-cream-muted">
-        {addressLines.map((line) => (
-          <span key={line} className="block">
-            {line}
-          </span>
-        ))}
+      <address className="mt-3 text-sm not-italic leading-relaxed text-cream-muted">
+        {addressLines[0]}
       </address>
       <p className="mt-4">
         <a

@@ -13,12 +13,15 @@ export default function Footer() {
               Live jazz, local voices and great company.
             </p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream-muted">
-              Pop Up Jazz Club takes place at {popUpJazzClubVenue.title}.{" "}
+              Pop Up Jazz Club takes place at Station Hall, Herne Hill, South
+              London.
+            </p>
+            <p className="mt-2">
               <a
                 href={popUpJazzClubVenue.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gold transition-colors hover:text-gold-light"
+                className="text-sm text-gold transition-colors hover:text-gold-light"
               >
                 Directions
               </a>

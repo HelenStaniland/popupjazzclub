@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navLinks } from "@/lib/content";
+import { isJoinPagePath } from "@/lib/mailerlite";
 
 export default function Header() {
   const pathname = usePathname();
@@ -25,16 +26,20 @@ export default function Header() {
           {navLinks.map(({ href, label }) => {
             const isActive =
               href === "/" ? pathname === "/" : pathname.startsWith(href);
+            const className = `text-sm tracking-wide transition-colors ${
+              isActive ? "text-gold" : "text-cream-muted hover:text-cream"
+            }`;
+
+            if (isJoinPagePath(href)) {
+              return (
+                <a key={href} href={href} className={className}>
+                  {label}
+                </a>
+              );
+            }
+
             return (
-              <Link
-                key={href}
-                href={href}
-                className={`text-sm tracking-wide transition-colors ${
-                  isActive
-                    ? "text-gold"
-                    : "text-cream-muted hover:text-cream"
-                }`}
-              >
+              <Link key={href} href={href} className={className}>
                 {label}
               </Link>
             );
@@ -66,17 +71,29 @@ export default function Header() {
             {navLinks.map(({ href, label }) => {
               const isActive =
                 href === "/" ? pathname === "/" : pathname.startsWith(href);
+              const className = `block text-lg tracking-wide ${
+                isActive ? "text-gold" : "text-cream-muted"
+              }`;
+
               return (
                 <li key={href}>
-                  <Link
-                    href={href}
-                    className={`block text-lg tracking-wide ${
-                      isActive ? "text-gold" : "text-cream-muted"
-                    }`}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {label}
-                  </Link>
+                  {isJoinPagePath(href) ? (
+                    <a
+                      href={href}
+                      className={className}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={href}
+                      className={className}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {label}
+                    </Link>
+                  )}
                 </li>
               );
             })}

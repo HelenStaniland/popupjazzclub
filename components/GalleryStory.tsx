@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Button from "@/components/Button";
 import { galleryStory } from "@/lib/content";
 
@@ -354,12 +353,12 @@ export default function GalleryStory() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/events">See upcoming events</Button>
-            <Link
+            <a
               href="/join"
               className="text-sm text-gold transition-colors hover:text-gold-light"
             >
               Join the Club →
-            </Link>
+            </a>
           </div>
         </div>
       </section>

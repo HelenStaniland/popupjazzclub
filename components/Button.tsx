@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { isJoinPagePath } from "@/lib/mailerlite";
 
 type ButtonVariant = "primary" | "secondary" | "outline";
 
@@ -24,11 +25,18 @@ export default function Button({
   variant = "primary",
   className = "",
 }: ButtonProps) {
+  const styles = `inline-flex items-center justify-center rounded-sm px-7 py-3.5 text-sm font-medium tracking-wide uppercase transition-all duration-300 ${variantStyles[variant]} ${className}`;
+
+  if (isJoinPagePath(href)) {
+    return (
+      <a href={href} className={styles}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className={`inline-flex items-center justify-center rounded-sm px-7 py-3.5 text-sm font-medium tracking-wide uppercase transition-all duration-300 ${variantStyles[variant]} ${className}`}
-    >
+    <Link href={href} className={styles}>
       {children}
     </Link>
   );

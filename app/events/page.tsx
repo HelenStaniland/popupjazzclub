@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Button from "@/components/Button";
 import VenueDetails from "@/components/VenueDetails";
 
@@ -50,12 +49,12 @@ export default function EventsPage() {
           {!TICKETS_ON_SALE && (
             <p className="mb-8 max-w-2xl text-sm leading-relaxed text-cream-muted">
               Tickets will be available here soon.{" "}
-              <Link
+              <a
                 href="/join"
                 className="text-gold transition-colors hover:text-gold-light"
               >
                 Join the Club
-              </Link>{" "}
+              </a>{" "}
               to hear when booking opens.
             </p>
           )}

@@ -19,6 +19,14 @@ const variantStyles: Record<ButtonVariant, string> = {
     "bg-transparent text-cream border border-gold/40 hover:border-gold hover:bg-gold/10",
 };
 
+function isExternalHref(href: string) {
+  return (
+    href.startsWith("http://") ||
+    href.startsWith("https://") ||
+    href.startsWith("mailto:")
+  );
+}
+
 export default function Button({
   href,
   children,
@@ -27,9 +35,16 @@ export default function Button({
 }: ButtonProps) {
   const styles = `inline-flex items-center justify-center rounded-sm px-7 py-3.5 text-sm font-medium tracking-wide uppercase transition-all duration-300 ${variantStyles[variant]} ${className}`;
 
-  if (isJoinPagePath(href)) {
+  if (isJoinPagePath(href) || isExternalHref(href)) {
+    const isHttp = href.startsWith("http://") || href.startsWith("https://");
     return (
-      <a href={href} className={styles}>
+      <a
+        href={href}
+        className={styles}
+        {...(isHttp
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : undefined)}
+      >
         {children}
       </a>
     );

@@ -2,29 +2,35 @@ import type { Metadata } from "next";
 import Button from "@/components/Button";
 import VenueDetails from "@/components/VenueDetails";
 
-// Temporary — set to true when ticket booking is live
-const TICKETS_ON_SALE = false;
-
 export const metadata: Metadata = {
   title: "Events",
   description:
     "Upcoming Pop Up Jazz Club nights in Herne Hill — live music, local talent, and good company.",
 };
 
-const upcomingEvents = [
+type UpcomingEvent = {
+  date: string;
+  title: string;
+  description: string;
+  status: "On sale" | "Upcoming";
+  ticketUrl?: string;
+};
+
+const upcomingEvents: UpcomingEvent[] = [
   {
     date: "Friday 11 September 2026",
     title: "Vocal Jazz Night",
     description:
       "An open, welcoming evening of vocal jazz — local singers, the house band, candlelit tables and a room full of encouragement. Bring a bottle and come along.",
     status: "On sale",
+    ticketUrl: "https://buytickets.at/popupjazzclub/2254280",
   },
   {
     date: "Saturday 10 October 2026",
     title: "Pop Up Jazz at the Herne Hill Music Festival",
     description:
       "Pop Up Jazz Club joins the Herne Hill Music Festival for an evening of live jazz, local voices and good company.",
-    status: "On sale",
+    status: "Upcoming",
   },
 ];
 
@@ -46,18 +52,6 @@ export default function EventsPage() {
 
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          {!TICKETS_ON_SALE && (
-            <p className="mb-8 max-w-2xl text-sm leading-relaxed text-cream-muted">
-              Tickets will be available here soon.{" "}
-              <a
-                href="/join"
-                className="text-gold transition-colors hover:text-gold-light"
-              >
-                Join the Club
-              </a>{" "}
-              to hear when booking opens.
-            </p>
-          )}
           <div className="space-y-6">
             {upcomingEvents.map((event) => (
               <article
@@ -72,12 +66,12 @@ export default function EventsPage() {
                       </time>
                       <span
                         className={`rounded-full px-3 py-0.5 text-xs uppercase tracking-wider ${
-                          TICKETS_ON_SALE && event.status === "On sale"
+                          event.status === "On sale"
                             ? "bg-gold/15 text-gold"
                             : "bg-cream-muted/10 text-cream-muted"
                         }`}
                       >
-                        {TICKETS_ON_SALE ? event.status : "Upcoming"}
+                        {event.status}
                       </span>
                     </div>
                     <h2 className="mt-3 font-serif text-2xl font-light text-cream">
@@ -88,14 +82,8 @@ export default function EventsPage() {
                     </p>
                   </div>
                   <div className="shrink-0">
-                    {TICKETS_ON_SALE && event.status === "On sale" ? (
-                      <Button href="mailto:hello@popupjazzclub.com?subject=Ticket%20enquiry">
-                        Book Tickets
-                      </Button>
-                    ) : TICKETS_ON_SALE ? (
-                      <Button href="/join" variant="outline">
-                        Join the Club
-                      </Button>
+                    {event.ticketUrl ? (
+                      <Button href={event.ticketUrl}>Buy Tickets</Button>
                     ) : (
                       <span
                         aria-disabled="true"

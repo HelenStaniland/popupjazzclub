@@ -21,7 +21,7 @@ const upcomingEvents: UpcomingEvent[] = [
     date: "Friday 11 September 2026",
     title: "Vocal Jazz Night",
     description:
-      "An open, welcoming evening of vocal jazz — local singers, the house band, candlelit tables and a room full of encouragement. Bring a bottle and come along.",
+      "An open, welcoming evening of vocal jazz — local singers, the house band and candlelit tables; there’s no bar, so bring your own wine, beer or other drinks and we’ll provide the glasses, ice, ice buckets, bottle openers and, naturally, a strategically placed bowl of crisps or two.",
     status: "On sale",
     ticketUrl: "https://buytickets.at/popupjazzclub/2254280",
   },

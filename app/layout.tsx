@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import Footer from "@/components/Footer";
@@ -48,6 +49,7 @@ n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
 (window,document,'script','${MAILERLITE_UNIVERSAL_SRC}','ml');
 ml('account', '${MAILERLITE_ACCOUNT_ID}');`}
         </Script>
+        <Analytics />
       </body>
     </html>
   );

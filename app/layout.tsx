@@ -8,6 +8,7 @@ import {
   MAILERLITE_ACCOUNT_ID,
   MAILERLITE_UNIVERSAL_SRC,
 } from "@/lib/mailerlite";
+import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -23,12 +24,21 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: getSiteUrl(),
   title: {
     default: "Pop Up Jazz Club | Herne Hill Jazz Nights",
     template: "%s | Pop Up Jazz Club",
   },
   description:
     "A community jazz night in Herne Hill — local singers, musicians, friends and music lovers together.",
+  openGraph: {
+    siteName: "Pop Up Jazz Club",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({

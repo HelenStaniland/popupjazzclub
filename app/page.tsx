@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import FactStrip from "@/components/FactStrip";
 import HomeWhatIs from "@/components/HomeWhatIs";
@@ -6,6 +7,11 @@ import HomeFriends from "@/components/HomeFriends";
 import HomeHouseBand from "@/components/HomeHouseBand";
 import HomeInterestedInSinging from "@/components/HomeInterestedInSinging";
 import HomeJoinUs from "@/components/HomeJoinUs";
+import { getHomeShareMetadata } from "@/lib/social";
+
+export function generateMetadata(): Metadata {
+  return getHomeShareMetadata();
+}
 
 export default function Home() {
   return (

@@ -1,38 +1,17 @@
 import type { Metadata } from "next";
 import Button from "@/components/Button";
 import VenueDetails from "@/components/VenueDetails";
+import { upcomingEvents } from "@/lib/events";
+import { getNextEventShareMetadata } from "@/lib/social";
 
-export const metadata: Metadata = {
-  title: "Events",
-  description:
-    "Upcoming Pop Up Jazz Club nights in Herne Hill — live music, local talent, and good company.",
-};
-
-type UpcomingEvent = {
-  date: string;
-  title: string;
-  description: string;
-  status: "On sale" | "Upcoming";
-  ticketUrl?: string;
-};
-
-const upcomingEvents: UpcomingEvent[] = [
-  {
-    date: "Friday 11 September 2026",
-    title: "Vocal Jazz Night",
+export function generateMetadata(): Metadata {
+  return {
+    title: "Events",
     description:
-      "An open, welcoming evening of vocal jazz — local singers, the house band and candlelit tables; there’s no bar, so bring your own wine, beer or other drinks and we’ll provide the glasses, ice, ice buckets, bottle openers and, naturally, a strategically placed bowl of crisps or two.",
-    status: "On sale",
-    ticketUrl: "https://buytickets.at/popupjazzclub/2254280",
-  },
-  {
-    date: "Saturday 10 October 2026",
-    title: "Pop Up Jazz at the Herne Hill Music Festival",
-    description:
-      "Pop Up Jazz Club joins the Herne Hill Music Festival for an evening of live jazz, local voices and good company.",
-    status: "Upcoming",
-  },
-];
+      "Upcoming Pop Up Jazz Club nights in Herne Hill — live music, local talent, and good company.",
+    ...getNextEventShareMetadata(),
+  };
+}
 
 export default function EventsPage() {
   return (
@@ -61,7 +40,10 @@ export default function EventsPage() {
                 <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-3">
-                      <time className="text-sm uppercase tracking-widest text-gold">
+                      <time
+                        className="text-sm uppercase tracking-widest text-gold"
+                        dateTime={event.startsOn}
+                      >
                         {event.date}
                       </time>
                       <span

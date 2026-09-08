@@ -33,8 +33,10 @@ export const upcomingEvents: UpcomingEvent[] = [
     startsOn: "2026-10-10",
     title: "Pop Up Jazz at the Herne Hill Music Festival",
     description:
-      "Pop Up Jazz Club joins the Herne Hill Music Festival for an evening of live jazz, local voices and good company.",
-    status: "Upcoming",
+      "Pop Up Jazz Club joins the Herne Hill Music Festival for an evening of live jazz, local voices and good company. There is no bar at Station Hall, so bring your own wine, beer or other drinks and we’ll provide the glasses, ice, ice buckets, bottle openers and a speakeasy atmosphere!",
+    status: "On sale",
+    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353289",
+    time: "7:30pm - 11:00pm",
   },
 ];
 

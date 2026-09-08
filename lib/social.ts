@@ -74,7 +74,15 @@ export function getNextEventShareMetadata(): Pick<
   const ticketLine =
     event.ticketNote ??
     (event.status === "On sale" ? "Tickets on sale now." : "Tickets coming soon.");
-  const description = `${ticketLine}. ${popUpJazzClubVenue.title}. Live vocal jazz with local singers and the house band.`;
+  const timesLine = event.time;
+  const description = [
+    ticketLine,
+    timesLine,
+    popUpJazzClubVenue.title,
+    "Live vocal jazz with local singers and the house band.",
+  ]
+    .filter(Boolean)
+    .join(". ");
   const image = {
     ...eventImage,
     alt: `${event.title} — ${event.date} at ${popUpJazzClubVenue.title}`,

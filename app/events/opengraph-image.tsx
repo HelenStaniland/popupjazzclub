@@ -21,6 +21,7 @@ export default async function Image() {
   const band = event?.band;
   const singers = event?.singers;
   const ticketNote = event?.ticketNote;
+  const times = event?.time;
 
   const [serifRegular, serifSemiBold, sansMedium, photo] = await Promise.all([
     readFile(join(process.cwd(), "assets/fonts/CormorantGaramond-Regular.ttf")),
@@ -108,6 +109,20 @@ export default async function Image() {
           >
             {date} · {popUpJazzClubVenue.title}
           </div>
+          {times ? (
+            <div
+              style={{
+                display: "flex",
+                marginTop: 8,
+                fontFamily: "DM Sans",
+                fontSize: 18,
+                letterSpacing: "0.06em",
+                color: "#d4cadf",
+              }}
+            >
+              {times}
+            </div>
+          ) : null}
           {ticketNote ? (
             <div
               style={{

@@ -10,6 +10,7 @@ export type UpcomingEvent = {
   band?: string;
   singers?: string;
   ticketNote?: string;
+  time?: string;
 };
 
 export const upcomingEvents: UpcomingEvent[] = [
@@ -21,6 +22,7 @@ export const upcomingEvents: UpcomingEvent[] = [
       "An open, welcoming evening of vocal jazz — local singers, the house band and candlelit tables; there’s no bar, so bring your own wine, beer or other drinks and we’ll provide the glasses, ice, ice buckets, bottle openers and, naturally, a strategically placed bowl of crisps or two.",
     status: "On sale",
     ticketUrl: "https://buytickets.at/popupjazzclub/2254280",
+    time: "7:30pm - 10:30pm",
     band: "House Band: Paul - Keyboards, Helen - Double Bass, Vince - Drums, and Guest violin - Ariella",
     singers:
       "Suzie, Lottie, Nicola, Jeremy, Candida, Louisa, Trish, Sarah D, Helen, Liam, Andrew, Steve, Sarah B, Philip, Andrea, John",

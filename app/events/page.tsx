@@ -59,6 +59,9 @@ export default function EventsPage() {
                     <h2 className="mt-3 font-serif text-2xl font-light text-cream">
                       {event.title}
                     </h2>
+                    {event.time ? (
+                      <p className="mt-2 text-sm text-cream-muted">{event.time}</p>
+                    ) : null}
                     <p className="mt-3 max-w-xl text-sm leading-relaxed text-cream-muted">
                       {event.description}
                     </p>

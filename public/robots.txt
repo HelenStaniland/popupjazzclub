@@ -1,0 +1,11 @@
+User-Agent: *
+Allow: /
+
+User-Agent: facebookexternalhit
+Allow: /
+
+User-Agent: Facebot
+Allow: /
+
+User-Agent: WhatsApp
+Allow: /

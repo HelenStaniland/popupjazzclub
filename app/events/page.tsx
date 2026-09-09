@@ -84,9 +84,7 @@ export default function EventsPage() {
                     Tickets
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-cream-muted">
-                    Advance tickets: £8
-                    <br />
-                    £10 on the door (subject to availability)
+                    Tickets £8
                   </p>
                 </div>
                 <VenueDetails />

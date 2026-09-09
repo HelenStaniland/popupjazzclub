@@ -26,7 +26,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     band: "House Band: Paul - Keyboards, Helen - Double Bass, Vince - Drums, and Guest violin - Ariella",
     singers:
       "Suzie, Lottie, Nicola, Jeremy, Candida, Louisa, Trish, Sarah D, Helen, Liam, Andrew, Steve, Sarah B, Philip, Andrea, John",
-    ticketNote: "Tickets £8 advance",
+    ticketNote: "Tickets £8",
   },
   {
     date: "Saturday 10 October 2026",
@@ -37,6 +37,7 @@ export const upcomingEvents: UpcomingEvent[] = [
     status: "On sale",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353289",
     time: "7:30pm - 11:00pm",
+    ticketNote: "Tickets £8",
   },
 ];
 

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pop Up Jazz Club — Poster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background: #28243a;
+        --cream: #f5f0e6;
+        --cream-muted: #d4cadf;
+        --gold: #ac6298;
+        --gold-light: #ca84c4;
+        --gold-dark: #74447a;
+        --surface: #322d44;
+        --border: rgba(150, 75, 145, 0.24);
+        --glow: rgba(112, 48, 128, 0.28);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+        background: #1c1929;
+        color: var(--cream);
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px;
+        font-family: "DM Sans", system-ui, sans-serif;
+      }
+
+      .poster {
+        container-type: inline-size;
+        position: relative;
+        width: min(100vw - 32px, calc((100vh - 64px) * 0.707));
+        aspect-ratio: 1 / 1.414;
+        overflow: hidden;
+        background: var(--background);
+        color: var(--cream);
+        box-shadow:
+          0 24px 80px rgba(0, 0, 0, 0.45),
+          0 0 0 1px rgba(150, 75, 145, 0.18);
+      }
+
+      .glow {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 18% 0%, var(--glow) 0%, transparent 52%),
+          radial-gradient(ellipse at 100% 100%, rgba(116, 68, 122, 0.18) 0%, transparent 42%);
+        pointer-events: none;
+      }
+
+      .frame {
+        position: absolute;
+        inset: 4.6%;
+        border: 1px solid var(--border);
+        pointer-events: none;
+      }
+
+      .inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        padding: 10% 11% 10%;
+      }
+
+      .eyebrow {
+        font-size: 2.05cqi;
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      h1 {
+        margin-top: 3.2%;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 16.4cqi;
+        font-weight: 300;
+        line-height: 0.98;
+        letter-spacing: 0.01em;
+        color: var(--cream);
+      }
+
+      h1 .line {
+        display: block;
+        white-space: nowrap;
+      }
+
+      .tagline {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 4.4cqi;
+        font-weight: 300;
+        line-height: 1.28;
+        color: var(--cream-muted);
+      }
+
+      .event {
+        padding-top: 0;
+      }
+
+      .rule {
+        width: 10%;
+        height: 1.5px;
+        margin-bottom: 4.5%;
+        background: var(--gold);
+      }
+
+      .event-kicker {
+        font-size: 1.95cqi;
+        font-weight: 500;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      .event-title {
+        margin-top: 2%;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 6.4cqi;
+        font-weight: 400;
+        line-height: 1.1;
+        color: var(--cream);
+      }
+
+      .when-where {
+        margin-top: 2.2%;
+        font-size: 2.8cqi;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        color: var(--cream-muted);
+      }
+
+      .byo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 5.2cqi;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        color: var(--cream);
+      }
+
+      .facts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em 0.85em;
+        margin-top: 2.2%;
+        font-size: 1.9cqi;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--cream-muted);
+      }
+
+      .facts span + span::before {
+        content: "•";
+        margin-right: 0.85em;
+        color: var(--gold);
+      }
+
+      .tickets {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 4.2cqi;
+        font-weight: 400;
+        color: var(--cream);
+      }
+
+      @media print {
+        @page {
+          size: A3 portrait;
+          margin: 0;
+        }
+
+        html,
+        body {
+          background: var(--background);
+          padding: 0;
+          height: 100%;
+        }
+
+        body {
+          display: block;
+        }
+
+        .poster {
+          width: 100%;
+          height: 100%;
+          aspect-ratio: auto;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="poster" aria-label="Pop Up Jazz Club poster">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="frame" aria-hidden="true"></div>
+
+      <div class="inner">
+        <header>
+          <p class="eyebrow">Herne Hill, South London</p>
+          <h1>
+            <span class="line">Pop Up</span>
+            <span class="line">Jazz Club</span>
+          </h1>
+        </header>
+
+        <p class="tagline">Live jazz, local voices and great company.</p>
+
+        <section class="event">
+          <div class="rule" aria-hidden="true"></div>
+          <p class="event-kicker">Tonight</p>
+          <h2 class="event-title">Vocal Jazz Night</h2>
+          <p class="when-where">From 7:30pm · Station Hall</p>
+        </section>
+
+        <div>
+          <p class="byo">Bring your own bottle</p>
+          <p class="facts">
+            <span>Live house band</span>
+            <span>Candlelit tables</span>
+          </p>
+        </div>
+
+        <p class="tickets">Tickets £8</p>
+      </div>
+    </article>
+  </body>
+</html>

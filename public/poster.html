@@ -69,7 +69,7 @@
       .frame {
         position: absolute;
         inset: 4.6%;
-        border: 1px solid var(--border);
+        border: 1px solid color-mix(in srgb, var(--gold-light) 62%, transparent);
         pointer-events: none;
       }
 
@@ -88,7 +88,7 @@
         font-weight: 500;
         letter-spacing: 0.32em;
         text-transform: uppercase;
-        color: var(--gold);
+        color: var(--gold-light);
       }
 
       h1 {
@@ -96,7 +96,7 @@
         font-family: "Cormorant Garamond", serif;
         font-size: 16.4cqi;
         font-weight: 300;
-        line-height: 0.98;
+        line-height: 1.08;
         letter-spacing: 0.01em;
         color: var(--cream);
       }
@@ -119,18 +119,25 @@
       }
 
       .rule {
-        width: 10%;
-        height: 1.5px;
-        margin-bottom: 4.5%;
-        background: var(--gold);
+        width: 100%;
+        height: 2px;
+        margin-bottom: 0.55em;
+        background: var(--gold-light);
+      }
+
+      .event-kicker-block {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: stretch;
       }
 
       .event-kicker {
-        font-size: 1.95cqi;
-        font-weight: 500;
-        letter-spacing: 0.3em;
+        font-size: 4.2cqi;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        margin-right: -0.2em;
         text-transform: uppercase;
-        color: var(--gold);
+        color: var(--gold-light);
       }
 
       .event-title {
@@ -176,6 +183,13 @@
         color: var(--gold);
       }
 
+      .footer-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 4cqi;
+      }
+
       .tickets {
         font-family: "Cormorant Garamond", serif;
         font-size: 4.2cqi;
@@ -183,17 +197,35 @@
         color: var(--cream);
       }
 
+      .url {
+        margin-top: 1.6%;
+        font-size: 2.05cqi;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+      }
+
+      .qr {
+        width: 16.5cqi;
+        height: 16.5cqi;
+        flex-shrink: 0;
+        display: block;
+      }
+
       @media print {
         @page {
-          size: A3 portrait;
+          size: 303mm 426mm;
           margin: 0;
         }
 
         html,
         body {
+          width: 303mm;
+          height: 426mm;
+          min-height: 426mm;
           background: var(--background);
           padding: 0;
-          height: 100%;
         }
 
         body {
@@ -201,8 +233,9 @@
         }
 
         .poster {
-          width: 100%;
-          height: 100%;
+          width: 303mm;
+          height: 426mm;
+          max-width: none;
           aspect-ratio: auto;
           box-shadow: none;
         }
@@ -226,8 +259,10 @@
         <p class="tagline">Live jazz, local voices and great company.</p>
 
         <section class="event">
-          <div class="rule" aria-hidden="true"></div>
-          <p class="event-kicker">Tonight</p>
+          <div class="event-kicker-block">
+            <div class="rule" aria-hidden="true"></div>
+            <p class="event-kicker">Tonight</p>
+          </div>
           <h2 class="event-title">Vocal Jazz Night</h2>
           <p class="when-where">From 7:30pm · Station Hall</p>
         </section>
@@ -240,7 +275,19 @@
           </p>
         </div>
 
-        <p class="tickets">Tickets £8</p>
+        <div class="footer-row">
+          <div>
+            <p class="tickets">Tickets £8</p>
+            <p class="url">popupjazzclub.com</p>
+          </div>
+          <img
+            class="qr"
+            src="/poster-qr.svg"
+            alt="QR code linking to popupjazzclub.com"
+            width="512"
+            height="512"
+          />
+        </div>
       </div>
     </article>
   </body>

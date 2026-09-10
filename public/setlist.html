@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pop Up Jazz Club — Setlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background: #28243a;
+        --cream: #f5f0e6;
+        --cream-muted: #d4cadf;
+        --gold: #ac6298;
+        --gold-light: #ca84c4;
+        --gold-dark: #74447a;
+        --border: rgba(150, 75, 145, 0.24);
+        --glow: rgba(112, 48, 128, 0.28);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+        background: #1c1929;
+        color: var(--cream);
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px;
+        font-family: "DM Sans", system-ui, sans-serif;
+      }
+
+      .sheet {
+        container-type: inline-size;
+        position: relative;
+        width: min(100vw - 32px, calc((100vh - 64px) * 0.707));
+        aspect-ratio: 1 / 1.414;
+        overflow: hidden;
+        background: var(--background);
+        color: var(--cream);
+        box-shadow:
+          0 24px 80px rgba(0, 0, 0, 0.45),
+          0 0 0 1px rgba(150, 75, 145, 0.18);
+      }
+
+      .glow {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 18% 0%, var(--glow) 0%, transparent 52%),
+          radial-gradient(ellipse at 100% 100%, rgba(116, 68, 122, 0.16) 0%, transparent 42%);
+        pointer-events: none;
+      }
+
+      .frame {
+        position: absolute;
+        inset: 3.6%;
+        border: 1px solid color-mix(in srgb, var(--gold-light) 62%, transparent);
+        pointer-events: none;
+      }
+
+      .inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 7.5% 8% 6.5%;
+      }
+
+      .eyebrow {
+        font-size: 1.7cqi;
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+      }
+
+      h1 {
+        margin-top: 1.6%;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 8.4cqi;
+        font-weight: 300;
+        line-height: 1.02;
+        letter-spacing: 0.01em;
+        color: var(--cream);
+      }
+
+      .meta {
+        margin-top: 1.4%;
+        font-size: 1.85cqi;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        color: var(--cream-muted);
+      }
+
+      .sets {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5.5cqi;
+        margin-top: 5%;
+        min-height: 0;
+        flex: 1;
+      }
+
+      .set-label {
+        font-size: 1.7cqi;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+      }
+
+      .set-rule {
+        width: 2.8em;
+        height: 1.5px;
+        margin: 0.7em 0 1.1em;
+        background: var(--gold-light);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th {
+        padding: 0 0 0.7em;
+        font-size: 1.35cqi;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        text-align: left;
+        color: var(--gold);
+        border-bottom: 1px solid var(--border);
+      }
+
+      td {
+        padding: 0.55em 0.4em 0.55em 0;
+        vertical-align: top;
+        border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .num {
+        width: 1.6em;
+        font-size: 1.55cqi;
+        font-weight: 500;
+        color: var(--gold-light);
+      }
+
+      .song {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.35cqi;
+        font-weight: 400;
+        line-height: 1.2;
+        color: var(--cream);
+      }
+
+      .who {
+        display: block;
+        margin-top: 0.15em;
+        font-family: "DM Sans", system-ui, sans-serif;
+        font-size: 1.45cqi;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        color: var(--cream-muted);
+      }
+
+      .note {
+        color: var(--gold);
+      }
+
+      .key {
+        width: 2.4em;
+        padding-right: 0;
+        font-size: 1.55cqi;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-align: right;
+        color: var(--gold-light);
+        white-space: nowrap;
+      }
+
+      .interval {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2em;
+        margin-top: 1.6%;
+        font-size: 1.55cqi;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+      }
+
+      .interval::before,
+      .interval::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: color-mix(in srgb, var(--gold-light) 45%, transparent);
+      }
+
+      .interval-col {
+        justify-content: flex-start;
+        margin-top: 1.4em;
+      }
+
+      .interval-col::before {
+        flex: 0 0 1.1em;
+      }
+
+      .band {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45em 1.1em;
+        margin-top: 2%;
+        font-size: 1.5cqi;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        color: var(--cream-muted);
+      }
+
+      .band span + span::before {
+        content: "•";
+        margin-right: 1.1em;
+        color: var(--gold);
+      }
+
+      .band b {
+        font-weight: 500;
+        color: var(--gold-light);
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: 2.4%;
+        padding-top: 1.8%;
+        border-top: 1px solid var(--border);
+        font-size: 1.45cqi;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--cream-muted);
+      }
+
+      .footer .url {
+        letter-spacing: 0.14em;
+        color: var(--gold-light);
+      }
+
+      @media print {
+        @page {
+          size: A4 portrait;
+          margin: 0;
+        }
+
+        html,
+        body {
+          width: 210mm;
+          height: 297mm;
+          min-height: 297mm;
+          background: var(--background);
+          padding: 0;
+        }
+
+        body {
+          display: block;
+        }
+
+        .sheet {
+          width: 210mm;
+          height: 297mm;
+          max-width: none;
+          aspect-ratio: auto;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="sheet" aria-label="Pop Up Jazz Club setlist">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="frame" aria-hidden="true"></div>
+
+      <div class="inner">
+        <header>
+          <p class="eyebrow">Herne Hill, South London</p>
+          <h1>Pop Up Jazz Club</h1>
+          <p class="meta">Setlist · Vocal Jazz Night · Friday 11 September 2026</p>
+        </header>
+
+        <div class="sets">
+          <section>
+            <p class="set-label">Set 1</p>
+            <div class="set-rule" aria-hidden="true"></div>
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Song</th>
+                  <th>Key</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="num">1</td>
+                  <td>
+                    <span class="song">Bye Bye Blackbird</span>
+                    <span class="who">Helen</span>
+                  </td>
+                  <td class="key">C</td>
+                </tr>
+                <tr>
+                  <td class="num">2</td>
+                  <td>
+                    <span class="song">Makin’ Whoopee</span>
+                    <span class="who">Suzy</span>
+                  </td>
+                  <td class="key">A</td>
+                </tr>
+                <tr>
+                  <td class="num">3</td>
+                  <td>
+                    <span class="song">Somethin’ Stupid</span>
+                    <span class="who">Lottie, Candida, Ariela</span>
+                  </td>
+                  <td class="key">A</td>
+                </tr>
+                <tr>
+                  <td class="num">4</td>
+                  <td>
+                    <span class="song">For Once In My Life</span>
+                    <span class="who">Steve</span>
+                  </td>
+                  <td class="key">F</td>
+                </tr>
+                <tr>
+                  <td class="num">5</td>
+                  <td>
+                    <span class="song">Golden Brown</span>
+                    <span class="who">Jeremy</span>
+                  </td>
+                  <td class="key">G–</td>
+                </tr>
+                <tr>
+                  <td class="num">6</td>
+                  <td>
+                    <span class="song">These Foolish Things</span>
+                    <span class="who">John</span>
+                  </td>
+                  <td class="key">D</td>
+                </tr>
+                <tr>
+                  <td class="num">7</td>
+                  <td>
+                    <span class="song">You Always Hurt The One You Love</span>
+                    <span class="who">Candida, Louisa, Trish</span>
+                  </td>
+                  <td class="key">B♭</td>
+                </tr>
+                <tr>
+                  <td class="num">8</td>
+                  <td>
+                    <span class="song">Ain’t Misbehavin’</span>
+                    <span class="who">Philip</span>
+                  </td>
+                  <td class="key">C</td>
+                </tr>
+                <tr>
+                  <td class="num">9</td>
+                  <td>
+                    <span class="song">On The Street Where You Live</span>
+                    <span class="who">Sarah B</span>
+                  </td>
+                  <td class="key">G</td>
+                </tr>
+                <tr>
+                  <td class="num">10</td>
+                  <td>
+                    <span class="song">I Wish I Knew How It Would Feel To Be Free</span>
+                    <span class="who">Nicola</span>
+                  </td>
+                  <td class="key">B♭</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="interval interval-col">Intermission</p>
+          </section>
+
+          <section>
+            <p class="set-label">Set 2</p>
+            <div class="set-rule" aria-hidden="true"></div>
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Song</th>
+                  <th>Key</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="num">1</td>
+                  <td>
+                    <span class="song">Sweet Dreams</span>
+                    <span class="who">Helen</span>
+                  </td>
+                  <td class="key">C–</td>
+                </tr>
+                <tr>
+                  <td class="num">2</td>
+                  <td>
+                    <span class="song">Dance Me To The End Of Love</span>
+                    <span class="who">Suzy</span>
+                  </td>
+                  <td class="key">F–</td>
+                </tr>
+                <tr>
+                  <td class="num">3</td>
+                  <td>
+                    <span class="song">All The World Is Green</span>
+                    <span class="who">Lottie</span>
+                  </td>
+                  <td class="key">E–</td>
+                </tr>
+                <tr>
+                  <td class="num">4</td>
+                  <td>
+                    <span class="song">I’m Through With Love</span>
+                    <span class="who">Jeremy</span>
+                  </td>
+                  <td class="key">B♭</td>
+                </tr>
+                <tr>
+                  <td class="num">5</td>
+                  <td>
+                    <span class="song">Running Scared</span>
+                    <span class="who">Liam</span>
+                  </td>
+                  <td class="key">A</td>
+                </tr>
+                <tr>
+                  <td class="num">6</td>
+                  <td>
+                    <span class="song">Hit The Ground</span>
+                    <span class="who">Nicola</span>
+                  </td>
+                  <td class="key">G</td>
+                </tr>
+                <tr>
+                  <td class="num">7</td>
+                  <td>
+                    <span class="song">What A Wonderful World</span>
+                    <span class="who">Philip</span>
+                  </td>
+                  <td class="key">A</td>
+                </tr>
+                <tr>
+                  <td class="num">8</td>
+                  <td>
+                    <span class="song">9 To 5</span>
+                    <span class="who">Sarah B</span>
+                  </td>
+                  <td class="key">G</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+
+        <p class="band">
+          <span><b>Keyboards</b> Paul Southern</span>
+          <span><b>Drums</b> Vincent Burke</span>
+          <span><b>Double bass</b> Helen Staniland</span>
+        </p>
+
+        <footer class="footer">
+          <span>Station Hall</span>
+          <span class="url">popupjazzclub.com</span>
+        </footer>
+      </div>
+    </article>
+  </body>
+</html>

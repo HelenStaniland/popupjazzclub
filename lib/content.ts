@@ -13,7 +13,7 @@ type SingerPhoto = {
 
 export const singerPhotos: SingerPhoto[] = [
   {
-    src: "/gallery/Philip.jpeg",
+    src: "/gallery/philip.jpeg",
     alt: "Local singer performing on stage",
     objectPosition: "center 28%",
   },

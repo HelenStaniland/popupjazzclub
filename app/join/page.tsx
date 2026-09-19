@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function JoinPage() {
   return (
     <div>
-      <section className="relative overflow-hidden border-b border-border/40 bg-surface py-16 sm:py-24">
+      <section className="relative overflow-hidden border-b border-border/40 bg-surface py-8 sm:py-10">
         <div
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--glow-join)_0%,transparent_70%)]"
           aria-hidden

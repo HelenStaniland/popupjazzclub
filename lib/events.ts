@@ -15,20 +15,6 @@ export type UpcomingEvent = {
 
 export const upcomingEvents: UpcomingEvent[] = [
   {
-    date: "Friday 11 September 2026",
-    startsOn: "2026-09-11",
-    title: "Vocal Jazz Night",
-    description:
-      "An open, welcoming evening of vocal jazz — local singers, the house band and candlelit tables; there’s no bar, so bring your own wine, beer or other drinks and we’ll provide the glasses, ice, ice buckets, bottle openers and, naturally, a strategically placed bowl of crisps or two.",
-    status: "On sale",
-    ticketUrl: "https://buytickets.at/popupjazzclub/2254280",
-    time: "7:30pm - 10:30pm",
-    band: "House Band: Paul - Keyboards, Helen - Double Bass, Vince - Drums, and Guest violin - Ariella",
-    singers:
-      "Suzie, Lottie, Nicola, Jeremy, Candida, Louisa, Trish, Sarah D, Helen, Liam, Andrew, Steve, Sarah B, Philip, Andrea, John",
-    ticketNote: "Tickets £8",
-  },
-  {
     date: "Saturday 10 October 2026",
     startsOn: "2026-10-10",
     title: "Pop Up Jazz at the Herne Hill Music Festival",
@@ -37,6 +23,16 @@ export const upcomingEvents: UpcomingEvent[] = [
     status: "On sale",
     ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353289",
     time: "7:30pm - 11:00pm",
+    ticketNote: "Tickets £8",
+  },
+  {
+    date: "Friday 18 December 2026",
+    startsOn: "2026-12-18",
+    title: "Christmas Vocal Jazz Night",
+    description:
+      "An open, welcoming evening of vocal jazz — local singers, the house band and candlelit tables; there’s no bar, so bring your own wine, beer or other drinks and we’ll provide the glasses, ice, ice buckets, bottle openers and, naturally, a strategically placed bowl of crisps or two.",
+    status: "Upcoming",
+    time: "7:30pm - 10:30pm",
     ticketNote: "Tickets £8",
   },
 ];

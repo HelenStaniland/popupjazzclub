@@ -46,6 +46,16 @@ export default function HomeFriends() {
             />
           </div>
         </div>
+
+        <div className="relative mt-12 aspect-[2/1] overflow-hidden rounded-sm border border-border bg-surface lg:mt-16">
+          <Image
+            src="/gallery/AudienceOvation.jpg"
+            alt="The audience standing to applaud at Pop Up Jazz Club"
+            fill
+            sizes="(max-width: 1152px) 100vw, 1152px"
+            className="object-cover object-[center_58%]"
+          />
+        </div>
       </div>
     </section>
   );

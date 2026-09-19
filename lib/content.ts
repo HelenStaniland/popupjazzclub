@@ -13,6 +13,26 @@ type SingerPhoto = {
 
 export const singerPhotos: SingerPhoto[] = [
   {
+    src: "/gallery/Philip.jpeg",
+    alt: "Local singer performing on stage",
+    objectPosition: "center 28%",
+  },
+  {
+    src: "/gallery/Violin.jpeg",
+    alt: "Violinist performing on stage",
+    objectPosition: "center 28%",
+  },
+  {
+    src: "/gallery/VinceHelen.jpeg",
+    alt: "The house band on drums and double bass",
+    objectPosition: "center 22%",
+  },
+  {
+    src: "/gallery/DuetLC.jpeg",
+    alt: "Two local singers performing a duet on stage",
+    objectPosition: "center 40%",
+  },
+  {
     src: "/gallery/Singer1.jpg",
     alt: "Local singer performing with the house band",
   },
@@ -108,6 +128,17 @@ export const galleryStory = [
         alt: "Local singer performing with the double bass player",
         caption: "With the double bass.",
         objectPosition: "top",
+      },
+      {
+        src: "/gallery/Trio.jpeg",
+        alt: "Three local singers performing together",
+        caption: "Together on stage.",
+      },
+      {
+        src: "/gallery/SingerKeyboard.png",
+        alt: "Local singer performing with the pianist",
+        caption: "With the piano.",
+        objectPosition: "center 32%",
       },
     ],
   },

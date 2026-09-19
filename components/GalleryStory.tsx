@@ -278,7 +278,7 @@ function HouseBandSection({
 export default function GalleryStory() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-border/40 bg-surface py-12 sm:py-16 lg:py-20">
+      <section className="relative overflow-hidden border-b border-border/40 bg-surface py-8 sm:py-10">
         <div
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--glow-gallery)_0%,transparent_60%)]"
           aria-hidden

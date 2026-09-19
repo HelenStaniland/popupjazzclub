@@ -2,16 +2,19 @@ import Image from "next/image";
 
 const localVoicePhotos = [
   {
-    src: "/gallery/SingerKeyboard.png",
-    alt: "Local singer performing with the pianist",
+    src: "/gallery/Singer10.jpeg",
+    alt: "Local singer performing on stage",
+    objectPosition: "center 42%",
   },
   {
-    src: "/gallery/Singer8.png",
-    alt: "Local singer performing on stage with the house band",
+    src: "/gallery/DuetLC.jpeg",
+    alt: "Two local singers performing a duet",
+    objectPosition: "center",
   },
   {
-    src: "/gallery/SmilingSingerBassist.png",
-    alt: "Local singer performing with the double bass player",
+    src: "/gallery/cowboy.jpeg",
+    alt: "Local singer performing on stage",
+    objectPosition: "center 32%",
   },
 ] as const;
 
@@ -36,17 +39,18 @@ export default function HomeLocalVoices() {
         </div>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-3 lg:mt-16">
-          {localVoicePhotos.map(({ src, alt }) => (
+          {localVoicePhotos.map(({ src, alt, objectPosition }) => (
             <figure
               key={src}
-              className="relative aspect-[4/5] overflow-hidden rounded-sm border border-border bg-surface"
+              className="relative aspect-[4/3] overflow-hidden rounded-sm border border-border bg-surface"
             >
               <Image
                 src={src}
                 alt={alt}
                 fill
                 sizes="(max-width: 640px) 100vw, 33vw"
-                className="object-cover object-center"
+                className="object-cover"
+                style={{ objectPosition }}
               />
             </figure>
           ))}

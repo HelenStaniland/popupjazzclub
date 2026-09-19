@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Button from "@/components/Button";
+import EventsPhotos from "@/components/EventsPhotos";
 import VenueDetails from "@/components/VenueDetails";
 import { upcomingEvents } from "@/lib/events";
 import { getNextEventShareMetadata } from "@/lib/social";
@@ -16,7 +17,7 @@ export function generateMetadata(): Metadata {
 export default function EventsPage() {
   return (
     <div>
-      <section className="border-b border-border/40 bg-surface py-16 sm:py-24">
+      <section className="border-b border-border/40 bg-surface py-8 sm:py-10">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-gold">Events</p>
           <h1 className="mt-4 font-serif text-4xl font-light text-cream sm:text-5xl">
@@ -29,8 +30,11 @@ export default function EventsPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="pt-8 pb-16 sm:pt-10 sm:pb-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="mb-8 lg:mb-10">
+            <EventsPhotos />
+          </div>
           <div className="space-y-6">
             {upcomingEvents.map((event) => (
               <article
@@ -74,7 +78,7 @@ export default function EventsPage() {
                         aria-disabled="true"
                         className="inline-flex cursor-not-allowed items-center justify-center rounded-sm border border-border bg-surface px-7 py-3.5 text-sm font-medium tracking-wide uppercase text-cream-muted/70"
                       >
-                        Tickets not yet on sale
+                        Not yet on sale
                       </span>
                     )}
                   </div>

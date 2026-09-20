@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const eventPhotos = [
   {
-    src: "/gallery/Lottie.jpeg",
+    src: "/gallery/Suzie.jpeg",
     alt: "Local singer performing on stage",
-    objectPosition: "center top",
+    objectPosition: "center 36%",
   },
   {
     src: "/gallery/TrioHappy.jpeg",
@@ -12,9 +12,9 @@ const eventPhotos = [
     objectPosition: "center 38%",
   },
   {
-    src: "/gallery/Suzie.jpeg",
+    src: "/gallery/Lottie.jpeg",
     alt: "Local singer performing on stage",
-    objectPosition: "center 36%",
+    objectPosition: "center top",
   },
 ] as const;
 

@@ -130,9 +130,10 @@ export const galleryStory = [
         objectPosition: "top",
       },
       {
-        src: "/gallery/Trio.jpeg",
-        alt: "Three local singers performing together",
-        caption: "Together on stage.",
+        src: "/gallery/VinceDrums.jpeg",
+        alt: "The house band drummer performing on stage",
+        caption: "On drums.",
+        objectPosition: "center 38%",
       },
       {
         src: "/gallery/SingerKeyboard.png",

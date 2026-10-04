@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pop Up Jazz Club — Roller banner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --background: #28243a;
+        --cream: #f5f0e6;
+        --cream-muted: #d4cadf;
+        --gold: #ac6298;
+        --gold-light: #ca84c4;
+        --gold-dark: #74447a;
+        --glow: rgba(112, 48, 128, 0.28);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+        background: #1c1929;
+        color: var(--cream);
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px;
+        font-family: "DM Sans", system-ui, sans-serif;
+      }
+
+      /* Screen preview shows the standing banner: 850 × 2000mm.
+         The sheet itself is the Solopress flat file, 850 × 2100mm plus 3mm bleed. */
+      .viewport {
+        width: min(calc((100vh - 48px) * 850 / 2000), calc(100vw - 32px));
+        aspect-ratio: 850 / 2000;
+        overflow: hidden;
+        box-shadow:
+          0 24px 80px rgba(0, 0, 0, 0.45),
+          0 0 0 1px rgba(150, 75, 145, 0.18);
+      }
+
+      .sheet {
+        container-type: inline-size;
+        position: relative;
+        width: calc(100% * 856 / 850);
+        height: calc(100% * 2106 / 2000);
+        margin-left: calc(100% * -3 / 850);
+        margin-top: calc(100% * -3 / 850);
+        overflow: hidden;
+        background: var(--background);
+        color: var(--cream);
+      }
+
+      .glow {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 18% 0%, var(--glow) 0%, transparent 46%),
+          radial-gradient(ellipse at 100% 72%, rgba(116, 68, 122, 0.22) 0%, transparent 36%);
+        pointer-events: none;
+      }
+
+      .frame {
+        position: absolute;
+        top: 2.15%;
+        right: 4.6%;
+        bottom: calc(7.55% + 10cqi);
+        left: 4.6%;
+        border: 0.2cqi solid color-mix(in srgb, var(--gold-light) 62%, transparent);
+        pointer-events: none;
+      }
+
+      .inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 5.4% 11% 24.6% 11%;
+      }
+
+      header {
+        transform: translateY(10cqi);
+      }
+
+      .eyebrow {
+        font-size: 2.15cqi;
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+      }
+
+      h1 {
+        margin-top: 3.6%;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 14.6cqi;
+        font-weight: 300;
+        line-height: 1.04;
+        letter-spacing: 0.01em;
+        color: var(--cream);
+      }
+
+      h1 .line {
+        display: block;
+        white-space: nowrap;
+      }
+
+      h1 .line + .line {
+        margin-top: 0.07em;
+      }
+
+      .tagline {
+        margin-top: 5.5%;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 4.15cqi;
+        font-weight: 300;
+        line-height: 1.28;
+        color: var(--cream-muted);
+      }
+
+      .event-kicker-block {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .rule {
+        width: 100%;
+        height: 0.28cqi;
+        margin-bottom: 0.42em;
+        background: var(--gold-light);
+      }
+
+      .event-kicker {
+        font-size: 6.4cqi;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        margin-right: -0.2em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+      }
+
+      .event-title {
+        margin-top: 2.4%;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 7.6cqi;
+        font-weight: 400;
+        line-height: 1.05;
+        color: var(--cream);
+      }
+
+      .when-where {
+        margin-top: 2.8%;
+        font-size: 2.7cqi;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        color: var(--cream-muted);
+      }
+
+      .byo {
+        margin-top: 8%;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 5.1cqi;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        color: var(--cream);
+      }
+
+      .facts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45em 0.8em;
+        margin-top: 3.2%;
+        font-size: 1.85cqi;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--cream-muted);
+      }
+
+      .facts span + span::before {
+        content: "•";
+        margin-right: 0.8em;
+        color: var(--gold);
+      }
+
+      .footer-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 4cqi;
+        transform: translateY(-10cqi);
+      }
+
+      .tickets {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 5.4cqi;
+        font-weight: 400;
+        color: var(--cream);
+      }
+
+      .url {
+        margin-top: 2.2%;
+        font-size: 2.15cqi;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+      }
+
+      .qr {
+        width: 20cqi;
+        height: 20cqi;
+        flex-shrink: 0;
+        display: block;
+      }
+
+      @media print {
+        @page {
+          size: 856mm 2106mm;
+          margin: 0;
+        }
+
+        html,
+        body {
+          width: 856mm;
+          height: 2106mm;
+          min-height: 2106mm;
+          background: var(--background);
+          padding: 0;
+        }
+
+        body {
+          display: block;
+        }
+
+        .viewport {
+          width: 856mm;
+          height: 2106mm;
+          overflow: visible;
+          aspect-ratio: auto;
+          box-shadow: none;
+        }
+
+        .sheet {
+          width: 856mm;
+          height: 2106mm;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="viewport">
+      <article class="sheet" aria-label="Pop Up Jazz Club roller banner">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="frame" aria-hidden="true"></div>
+
+        <div class="inner">
+          <header>
+            <p class="eyebrow">Herne Hill, South London</p>
+            <h1>
+              <span class="line">Pop Up</span>
+              <span class="line">Jazz Club</span>
+            </h1>
+            <p class="tagline">Live jazz, local voices and great company.</p>
+          </header>
+
+          <section class="event">
+            <div class="event-kicker-block">
+              <div class="rule" aria-hidden="true"></div>
+              <p class="event-kicker">Tonight</p>
+            </div>
+            <h2 class="event-title">Vocal Jazz Night</h2>
+            <p class="when-where">From 7:30pm · Station Hall</p>
+            <p class="byo">Bring your own bottle</p>
+            <p class="facts">
+              <span>Live house band</span>
+              <span>Candlelit tables</span>
+            </p>
+          </section>
+
+          <div class="footer-row">
+            <div>
+              <p class="tickets">Tickets £8</p>
+              <p class="url">popupjazzclub.com</p>
+            </div>
+            <img
+              class="qr"
+              src="/poster-qr.svg"
+              alt="QR code linking to popupjazzclub.com"
+              width="512"
+              height="512"
+            />
+          </div>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

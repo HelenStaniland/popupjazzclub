@@ -72,8 +72,12 @@ export function getNextEventShareMetadata(): Pick<
 
   const title = `${event.title} — ${event.date}`;
   const ticketLine =
-    event.ticketNote ??
-    (event.status === "On sale" ? "Tickets on sale now." : "Tickets coming soon.");
+    event.status === "Sold out"
+      ? "Sold out"
+      : (event.ticketNote ??
+        (event.status === "On sale"
+          ? "Tickets on sale now."
+          : "Tickets coming soon."));
   const timesLine = event.time;
   const description = [
     ticketLine,

@@ -1,4 +1,4 @@
-export type EventStatus = "On sale" | "Upcoming";
+export type EventStatus = "On sale" | "Upcoming" | "Sold out";
 
 export type UpcomingEvent = {
   date: string;
@@ -16,6 +16,19 @@ export type UpcomingEvent = {
 
 export const upcomingEvents: UpcomingEvent[] = [
   {
+<<<<<<< HEAD
+=======
+    date: "Saturday 10 October 2026",
+    startsOn: "2026-10-10",
+    title: "Pop Up Jazz at the Herne Hill Music Festival",
+    description:
+      "Pop Up Jazz Club joins the Herne Hill Music Festival for an evening of live jazz, local voices and good company. There is no bar at Station Hall, so bring your own wine, beer or other drinks and we’ll provide the glasses, ice, ice buckets, bottle openers and a speakeasy atmosphere!",
+    status: "Sold out",
+    time: "7:30pm - 11:00pm",
+    ticketNote: "Sold out",
+  },
+  {
+>>>>>>> fbb7d94760c65fd52b4cfe87cfae1bcceaa77896
     date: "Friday 18 December 2026",
     startsOn: "2026-12-18",
     title: "Christmas Vocal Jazz Night",

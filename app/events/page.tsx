@@ -73,7 +73,14 @@ export default function EventsPage() {
                     </p>
                   </div>
                   <div className="shrink-0">
-                    {event.ticketUrl ? (
+                    {event.status === "Sold out" ? (
+                      <span
+                        aria-disabled="true"
+                        className="inline-flex cursor-not-allowed items-center justify-center rounded-sm border border-border bg-surface px-7 py-3.5 text-sm font-medium tracking-wide uppercase text-cream-muted/70"
+                      >
+                        Sold out
+                      </span>
+                    ) : event.ticketUrl ? (
                       <Button href={event.ticketUrl}>Buy Tickets</Button>
                     ) : (
                       <span

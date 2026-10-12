@@ -11,20 +11,10 @@ export type UpcomingEvent = {
   singers?: string;
   ticketNote?: string;
   time?: string;
+  callout?: string;
 };
 
 export const upcomingEvents: UpcomingEvent[] = [
-  {
-    date: "Saturday 10 October 2026",
-    startsOn: "2026-10-10",
-    title: "Pop Up Jazz at the Herne Hill Music Festival",
-    description:
-      "Pop Up Jazz Club joins the Herne Hill Music Festival for an evening of live jazz, local voices and good company. There is no bar at Station Hall, so bring your own wine, beer or other drinks and we’ll provide the glasses, ice, ice buckets, bottle openers and a speakeasy atmosphere!",
-    status: "On sale",
-    ticketUrl: "https://buytickets.at/hernehillmusicfestival/2353289",
-    time: "7:30pm - 11:00pm",
-    ticketNote: "Tickets £8",
-  },
   {
     date: "Friday 18 December 2026",
     startsOn: "2026-12-18",
@@ -34,7 +24,8 @@ export const upcomingEvents: UpcomingEvent[] = [
     status: "On sale",
     ticketUrl: "https://buytickets.at/popupjazzclub/2430157",
     time: "7:30pm - 10:30pm",
-    ticketNote: "Tickets £8",
+    ticketNote: "Tickets £8 (excluding booking fee)",
+    callout: "Selling Fast!",
   },
 ];
 

@@ -32,9 +32,6 @@ export default function EventsPage() {
 
       <section className="pt-8 pb-16 sm:pt-10 sm:pb-24">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="mb-8 lg:mb-10">
-            <EventsPhotos />
-          </div>
           <div className="space-y-6">
             {upcomingEvents.map((event) => (
               <article
@@ -59,6 +56,11 @@ export default function EventsPage() {
                       >
                         {event.status}
                       </span>
+                      {event.callout ? (
+                        <span className="rounded-full bg-gold px-3 py-0.5 text-xs font-medium uppercase tracking-wider text-background">
+                          {event.callout}
+                        </span>
+                      ) : null}
                     </div>
                     <h2 className="mt-3 font-serif text-2xl font-light text-cream">
                       {event.title}
@@ -88,12 +90,15 @@ export default function EventsPage() {
                     Tickets
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-cream-muted">
-                    Tickets £8
+                    {event.ticketNote ?? "Tickets £8"}
                   </p>
                 </div>
                 <VenueDetails />
               </article>
             ))}
+          </div>
+          <div className="mt-8 lg:mt-10">
+            <EventsPhotos />
           </div>
 
           <p className="mt-12 text-center text-sm text-cream-muted">

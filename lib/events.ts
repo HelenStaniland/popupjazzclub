@@ -21,11 +21,9 @@ export const upcomingEvents: UpcomingEvent[] = [
     title: "Christmas Vocal Jazz Night",
     description:
       "An open, welcoming evening of vocal jazz — local singers, the house band and candlelit tables, with some Christmas classics in the mix; there’s no bar, so bring your own wine, beer or other drinks and we’ll provide the glasses, ice, ice buckets, bottle openers and a speakeasy atmosphere!",
-    status: "On sale",
-    ticketUrl: "https://buytickets.at/popupjazzclub/2430157",
+    status: "Sold out",
     time: "7:30pm - 10:30pm",
     ticketNote: "Tickets £8 (excluding booking fee)",
-    callout: "Selling Fast!",
   },
 ];
 
